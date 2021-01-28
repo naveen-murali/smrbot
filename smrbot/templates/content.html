@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% block content %}
+<main>
+    <div class="logo">
+        <img src="{{baseUrl}}/smrbot.png" alt="logo">
+    </div>
+
+    <h1>Registration Form</h1>
+
+    <form action="register/" method="post" class="main-form">
+        
+        {% csrf_token %}
+
+        <label for="name"><input type="text" name="name" placeholder="Name" /></label>
+        <label for="phone"><input type="number" name="phone" placeholder="Mobile-No" /></label>
+        <label for="place"><input type="text" name="place" placeholder="Place" /></label>
+    
+        <button type="submit" class="btn submit">
+            <i class="fas fa-arrow-alt-circle-right"></i>
+            Submit
+        </button>
+    </form>
+
+    <p class="contact">Contact Us<br /><span>+918086894243</span></p>
+
+    <!-- todo: only for wesite -->
+    <!-- <div class="media">
+        <a href="#" class="icons btn" type="button"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="icons btn" type="button"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="icons btn" type="button"><i class="fab fa-instagram"></i></a>
+    </div> -->
+</main>
+{% endblock %}

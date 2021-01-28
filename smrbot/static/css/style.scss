@@ -1,0 +1,168 @@
+$-bg-clr: #ebecf0;
+$-text-clr: #babecc;
+//todo: UNIVERSAL PART
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='input'] {
+  -moz-appearance: textfield;
+}
+.btn{
+    color: #61677c;
+    box-shadow: -5px -5px 20px #fff, 5px 5px 10px $-text-clr;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn:hover {
+    box-shadow: -2px -2px 5px #fff, 2px 2px 5px $-text-clr, inset -1px -1px 2px #fff;
+}
+.btn:active {
+    box-shadow: inset 1px 1px 2px $-text-clr, inset -1px -1px 2px #fff;
+}
+
+//todo: body part.
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $-bg-clr;
+}
+
+// todo: MAIN FORM PART----------------------------------------------------
+main{
+    width: 100vw;
+    height: fit-content;
+    padding: 1rem 0.8rem;
+    text-align: center;
+    .logo{
+        img{
+            width: 15%;
+            transform: rotate3d(1, 1, 1, -15deg);
+            border-radius: 50%;
+            box-shadow: -5px -5px 20px #fff, 5px 5px 20px #a5a5a5;
+        }
+    }
+    h1{
+
+        font-weight: 700;
+        text-align: center;
+        color: $-text-clr;
+        padding-bottom: 1.56rem;
+        text-shadow: 1px 1px 1px #fff;
+    }
+}
+.main-form{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    button,
+    input{
+        border: 0;
+        outline: 0;
+        font-size: 1rem;
+        border-radius: 20rem;
+        padding: 1rem;
+        background-color: $-bg-clr;
+        text-shadow: 1px 1px 0 #fff;
+    }
+    
+    label{
+        display: block;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        input{
+            width: 100%;
+            letter-spacing: 0.5px;
+            box-shadow: inset 0.125rem 0.125rem 0.312rem $-text-clr, inset -0.312rem -0.312rem 0.62rem #fff;
+            transition: all 0.2s ease-in-out;
+            appearance: none;
+        }
+        input:focus {
+            box-shadow: inset 1px 1px 2px $-text-clr, inset -1px -1px 2px #fff;
+        }
+    }
+    .submit{
+        display: block;
+        color: #ae1100;
+        border-radius: 20rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+}
+.contact{
+    color: $-text-clr;
+    text-shadow: 1px 1px 1px #fff;
+    text-align: center;
+    margin-top: 1.25rem;
+    font-weight: 800;
+    font-size: 1rem;
+    span{
+        font-size: 14px;
+    }
+}
+.media {
+    padding: 1.7rem 0;
+    text-align: center;
+
+    .icons {
+        border-radius: 0.5rem;
+        line-height: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0.5rem;
+        font-size: 1.2rem;
+        padding: 1rem;
+        border: none;
+        outline: 0;
+    }
+}
+// todo: MAIN FORM PART----------------------------------------------------
+
+@media screen and (min-width: 481px) {
+    main{
+        width: 75%;
+    }
+}
+@media screen and (min-width: 769px) {
+    main{
+        width: 60%;
+    }
+}
+@media screen and (min-width: 1025px) {
+    main{
+        width: 50%;
+    }
+    .contact{
+        span{
+            font-size: 12px;
+        }
+    }
+}
+@media screen and (min-width: 1201px) {
+    main{
+        width: 32%;
+    }
+    .contact{
+        span{
+            font-size: 12px;
+        }
+    }
+}
