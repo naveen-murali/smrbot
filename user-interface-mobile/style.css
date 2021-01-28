@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="input"]{
+    -moz-appearance: textfield;
+}
+body{
+     width: 100%;
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-color: #ebecf0;
+}
+div,p{
+    color:#babecc;
+    text-shadow: 1px 1px 1px #fff;
+}
+p{
+    text-align: center;
+    margin-top: 1.25rem;
+    font-weight: 800;
+    font-size:1rem;
+}
+.register-form{
+    width: 21.88rem;
+    height: auto;
+
+}
+.form-title{
+    text-align: center;
+    padding: 1.56rem 0;
+}
+label{
+    display: block;
+    margin-bottom:1.5rem ;
+    width:100%;
+}
+input{
+    margin-right:0.5rem ;
+    box-shadow: inset 0.125rem 0.125rem 0.312rem #babecc, inset -0.312rem -0.312rem 0.62rem #fff ;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    appearance:none;
+    -webkit-appearance:none;
+}
+button,input{
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+    border-radius: 20rem;
+    padding: 1rem;
+    background-color:#ebecf0 ;
+    text-shadow: 1px 1px 0 #fff;
+}
+input:focus{
+    box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+
+}
+button{
+    color:#61677c;
+    font-weight: bold;
+    box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+    /* width: 100%; */
+    /* align-self: flex-end; */
+}
+button.pad{
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+button:hover{
+    box-shadow: -2px -2px 5px #fff, 2px 2px 5px #babecc,inset -1px -1px 2px #fff;
+
+
+}
+button:active{
+    box-shadow:inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+}
+.red{
+    display: block;
+    /* width: 100%; */
+    color: #ae1100;
+}
+.social-media{
+    padding: 1.7rem 0;
+    text-align: center;
+}
+.social-media .social-icons{
+    border-radius: 0.5rem;
+    line-height: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items:center;
+    margin:0 0.5rem;
+    font-size:1.2rem;
+}
