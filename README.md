@@ -1,6 +1,6 @@
 # SMR-Bot
 
-> ###linux commands to run from this folder
+> ### linux commands to run from this folder
 >- kiosk.service /lib/systemmd/system/
 >- kiosk.sh /home/pi/
 
