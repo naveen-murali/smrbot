@@ -1,2 +1,2 @@
-addr=$(hostname -I)
-python3 /home/pi/Desktop/boot/new_mail.py $addr
+addr=$(sudo hostname -I)
+python3 /home/pi/smrbot/boot/new_mail.py $addr
