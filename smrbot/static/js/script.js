@@ -29,18 +29,34 @@ form.addEventListener('submit', (event) => {
         if (this.readyState == 4 && this.status == 200) {  
             let resData = JSON.parse(this.responseText);
             console.log(resData);
+            
+            if (resData.status) {
+                statusScreen.classList.remove("failed");
+                statusScreen.classList.add("success");
+                statusH1.textContent = "registration successful";
+                statusH4.textContent = `welcome ${resData.name}`;
+    
+                removeLoading();
+                activeStatus();
+                setTimeout(() => {
+                    removeStatus();
+                    location.reload()
+                }, 5000);
+            } else {
+                statusScreen.classList.remove("success");
+                statusScreen.classList.add("failed");
+                statusH1.textContent = "registration failed";
+                statusH4.textContent = `pleace try again`;
+    
+                removeLoading();
+                activeStatus();
+                setTimeout(() => {
+                    removeStatus();
+                    location.reload()
+                }, 5000);
+            }
 
-            statusScreen.classList.remove("failed");
-            statusScreen.classList.add("success");
-            statusH1.textContent = "registration successful";
-            statusH4.textContent = `welcome ${resData.name}`;
 
-            removeLoading();
-            activeStatus();
-            setTimeout(() => {
-                removeStatus();
-                location.reload()
-            }, 5000);
         } else if (this.readyState == 3) {
             activeLoading();
         } else if (this.status == 404 && this.status == 403) {
@@ -96,22 +112,3 @@ let removeStatus = () => {
 qrSectionDiv.addEventListener('click', (event) => {
     qrSection.classList.toggle("qr-section-active");
 });
-
-// setTimeout(() => {
-//     loadingDiv.classList.remove("loading-div-active");
-//     setTimeout(() => {
-//         loadingSection.classList.remove("loading-section-active");
-//     }, 200);
-// }, 5000);
-
-// setTimeout(() => { 
-//     statusSection.classList.add("status-section-active");
-//     statusScreen.classList.add("status-screen-active");
-// }, 5001);
-
-// setTimeout(() => {
-//     statusScreen.classList.remove("status-screen-active");
-//     setTimeout(() => {
-//         statusSection.classList.remove("status-section-active");
-//     }, 200);
-// }, 10000);
