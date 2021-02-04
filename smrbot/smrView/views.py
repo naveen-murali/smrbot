@@ -1,15 +1,24 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+
+# database--------------------------
 from . import connection
 from . import models
 
+# GPIO------------------------------
+from . import interface
+
+# Global functions------------------ 
 connection.connect()
+interface.setup()
 
 # Create your views here.
 def display(req):
+    interface.action()
     return render(req, 'content.html')
 
 def register(req):
+    interface.clean()
     data = req.POST
     resData={}
 
