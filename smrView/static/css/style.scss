@@ -309,6 +309,47 @@ main{
 }
 // todo: STATUS SECTION--------------------------------------------------------
 
+// todo: INFO/HOME SECTION-----------------------------------------------------
+.home-section{
+    z-index: -2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    .home-section-div{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #babbbe;
+        transform: scale(0.3);
+        transition: all 0.25s ease;
+
+        // h1{
+        //     // position: absolute;
+        //     // top: 50%;
+        //     // left: 50%;
+        //     // transform: translate(-50%, -50%);
+        // }
+    }
+
+}
+.home-section.home-section-active{
+    display: unset;
+    z-index: 6;
+}
+.home-section-div.home-section-div-active{
+    transform: scale(1);
+}
+// todo: INFO/HOME SECTION-----------------------------------------------------
+
 @media screen and (min-width: 481px) {
     main{
         width: 75%;
