@@ -4,12 +4,9 @@ from django.http import JsonResponse
 from time import sleep
 import datetime
 
-#! database--------------------------
-from . import connection, models, talk
+#! importing all localfiles--------------------------
+from . import connection, interface, models, talk
 
-
-#! GPIO------------------------------
-from . import interface
 
 #! Global functions calls------------ 
 connection.connect()
