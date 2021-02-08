@@ -7,7 +7,7 @@ msg = EmailMessage()
 
 """setting require parameter"""
 sender = 'naveenav0001@gmail.com'
-reciever = 'pranavkv02@gmail.com'
+reciever = 'smrbot007@gmail.com'
 msg["From"] = sender
 msg["To"] = reciever
 

@@ -5,12 +5,11 @@ from time import sleep
 import datetime
 
 #! importing all localfiles--------------------------
-from . import connection, interface, models, talk
+from . import connection, models, interface
 
 
 #! Global functions calls------------ 
 connection.connect()
-talk.removeVoice_All()
 interface.clean()
 interface.setup()
 
@@ -23,9 +22,7 @@ def display(req):
 def tempRead(req):
     print("------------[ajax connected]------------")
     if interface.action():
-        speechContent = "Please register your information."
-        talk.speech(speechContent, "voiceRegInfo.mp3")
-        return JsonResponse({"entryAllowed": True})
+        return JsonResponse({"entryAllowed": True, "speechContent": "Please register your information."})
     return JsonResponse({"data": "name"})
 
 
@@ -43,18 +40,14 @@ def register(req):
         resData = {
             "status": True,
             "id": str(res.inserted_id),
-            "name": data['name']
+            "name": data['name'],
+            "speechContent": "Your registration is successfull. Welcome " + data['name'] + " !"
         }
-        speechContent = "You are registration is successfull. Welcome " + data['name'] + " !"
-        talk.speech(speechContent, "voiceSuccess.mp3")
-        talk.removeVoice_All()
     else:
         resData = {
-            "status": False
+            "status": False,
+            "speechContent": "You are registration is failed, please try again !"
         }
-        speechContent = "You are registration is failed, please try again !"
-        talk.speech(speechContent, "voiceFail.mp3")
-        talk.removeVoice_One("voiceFail.mp3")
     return JsonResponse(resData)
 
 

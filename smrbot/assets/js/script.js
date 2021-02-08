@@ -21,14 +21,30 @@ const statusScreen = document.querySelector('.status-screen');
 const homeSection = document.querySelector('.home-section');
 const homeSectionDiv = document.querySelector('.home-section-div');
 
+// text to speech function.
+function say(msg) {
+    let speech = new SpeechSynthesisUtterance();
+
+    // speech.voice = voices[9]
+    speech.lang = "hi-IN";
+    // speech.voiceURI = "Google हिन्दी";
+    speech.text = msg;
+    speech.volume = 1;
+    speech.rate = 1.07;
+    speech.pitch = 1.1;
+    window.speechSynthesis.speak(speech);
+  }
+  
+
+// document state checking
 document.onreadystatechange = () => {
     if (document.readyState === 'complete') {
-        // document ready
+
         console.log(document.readyState);
         getAjax();
+
     }
 };
-
 let getAjax = () => {
     console.log("ajax started");
     let dt = Date();
@@ -43,6 +59,7 @@ let getAjax = () => {
             console.log(resData);
 
             homeSectionDiv.classList.remove("home-section-div-active");
+            say(resData.speechContent);
             setTimeout(() => {
                 homeSection.classList.remove("home-section-active");
             }, 200);
@@ -68,6 +85,8 @@ let getAjax = () => {
     xhttp.send();
 };
 
+
+// form submitting event listner.
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     let formData = new FormData(form);
@@ -84,10 +103,11 @@ form.addEventListener('submit', (event) => {
             if (resData.status) {
                 statusScreen.classList.remove("failed");
                 statusScreen.classList.add("success");
-                statusH1.textContent = "registration successful";
+                statusH1.textContent = "registration successfull";
                 statusH4.textContent = `welcome ${resData.name}`;
 
                 removeLoading();
+                say(resData.speechContent);
                 activeStatus();
                 setTimeout(() => {
                     removeStatus();
@@ -100,10 +120,10 @@ form.addEventListener('submit', (event) => {
                 statusH4.textContent = `pleace try again`;
 
                 removeLoading();
+                say(resData.speechContent);
                 activeStatus();
                 setTimeout(() => {
                     removeStatus();
-                    location.reload()
                 }, 5000);
             }
 
@@ -119,10 +139,10 @@ form.addEventListener('submit', (event) => {
             statusH4.textContent = `pleace try again`;
 
             removeLoading();
+            say("You are registration is failed, please try again !");
             activeStatus();
             setTimeout(() => {
                 removeStatus();
-                location.reload()
             }, 5000);
         }
     };
@@ -132,7 +152,6 @@ form.addEventListener('submit', (event) => {
 
     xhttp.send(formData);
 });
-
 
 
 // common loading function

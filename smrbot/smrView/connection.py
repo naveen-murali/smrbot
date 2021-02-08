@@ -5,12 +5,13 @@ state = {
 }
 
 url = 'mongodb+srv://smrbot:smrbot007@smrbot.qgasa.mongodb.net/testC?retryWrites=true&w=majority'
-client = pymongo.MongoClient(url)
 
 def connect():
     dbStatus = False
     while not dbStatus:
+        client = None
         try:
+            client = pymongo.MongoClient(url)
             state['db'] = client.test
             dbStatus = True
             print("-----------------[Connected]-----------------")

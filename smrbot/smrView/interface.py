@@ -11,7 +11,8 @@ def setup():
 def action():
     while 1:
         if not GPIO.input(inPin):
-            return True
+            break
+    return True
     
 # cleaning gpio ports--------------
 def clean():
