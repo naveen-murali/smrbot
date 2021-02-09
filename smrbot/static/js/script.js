@@ -20,7 +20,7 @@ const statusScreen = document.querySelector('.status-screen');
 // status portion.
 const homeSection = document.querySelector('.home-section');
 const homeSectionDiv = document.querySelector('.home-section-div');
-const homeSectionDivH1 = document.querySelector('home-section-div h1');
+const homeSectionDivH1 = document.querySelector('.home-section-div h1');
 
 
 // text to speech function.
@@ -60,7 +60,7 @@ let getAjax = () => {
             let resData = JSON.parse(this.responseText);
             console.log(resData);
 
-            if (resData.status) {
+            if (resData.entryAllowed) {
                 homeSectionDiv.classList.remove("home-section-div-active");
                 say(resData.speechContent);
                 setTimeout(() => {
@@ -71,7 +71,7 @@ let getAjax = () => {
                 say(resData.speechContent);
                 setTimeout(() => {
                     location.reload();
-                }, 200);
+                }, 5000);
             }
 
         } else if (this.readyState == 3) {

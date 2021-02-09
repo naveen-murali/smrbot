@@ -33,7 +33,7 @@ def get_tem_value():
 def get_avg(temp):
     total_temp = 0
     for t in range(len(temp)):
-        total_temp += t
+        total_temp += int(t)
     avg_temp = total_temp / len(temp)
     return avg_temp
 

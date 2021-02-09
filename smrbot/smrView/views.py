@@ -22,7 +22,10 @@ def display(req):
 
 def tempRead(req):
     print("------------[ajax connected]------------")
-    temp = interface.action()
+    temp = float(interface.action())
+    # temp = "a"
+    # while temp == "a":
+    #     temp = int(input("Enter num : "))
     if temp and 32 < temp and temp < 35:
         return JsonResponse({"entryAllowed": True, "speechContent": "Please register your information."})
     else:
