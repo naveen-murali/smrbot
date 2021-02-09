@@ -4,11 +4,12 @@ from django.http import JsonResponse
 from time import sleep
 import datetime
 
-#! importing all localfiles--------------------------
-from . import connection, models, interface
+#! importing all localfiles-----------------------------------------------------------------
+from . import connection, models
+from . import interface
 
 
-#! Global functions calls------------ 
+#! Global functions calls-------------------------------------------------------------------
 connection.connect()
 interface.clean()
 interface.setup()
@@ -21,9 +22,11 @@ def display(req):
 
 def tempRead(req):
     print("------------[ajax connected]------------")
-    if interface.action():
+    temp = interface.action()
+    if temp and 32 < temp and temp < 35:
         return JsonResponse({"entryAllowed": True, "speechContent": "Please register your information."})
-    return JsonResponse({"data": "name"})
+    else:
+        return JsonResponse({"entryAllowed": False, "speechContent": "Your temperature has some variation, Please wait and try again or Visit a doctor."})
 
 
 def register(req):

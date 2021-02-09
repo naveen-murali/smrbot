@@ -20,13 +20,15 @@ const statusScreen = document.querySelector('.status-screen');
 // status portion.
 const homeSection = document.querySelector('.home-section');
 const homeSectionDiv = document.querySelector('.home-section-div');
+const homeSectionDivH1 = document.querySelector('home-section-div h1');
+
 
 // text to speech function.
 function say(msg) {
     let speech = new SpeechSynthesisUtterance();
 
     // speech.voice = voices[9]
-    speech.lang = "hi-IN";
+    speech.lang = "en-IN";
     // speech.voiceURI = "Google हिन्दी";
     speech.text = msg;
     speech.volume = 1;
@@ -58,11 +60,19 @@ let getAjax = () => {
             let resData = JSON.parse(this.responseText);
             console.log(resData);
 
-            homeSectionDiv.classList.remove("home-section-div-active");
-            say(resData.speechContent);
-            setTimeout(() => {
-                homeSection.classList.remove("home-section-active");
-            }, 200);
+            if (resData.status) {
+                homeSectionDiv.classList.remove("home-section-div-active");
+                say(resData.speechContent);
+                setTimeout(() => {
+                    homeSection.classList.remove("home-section-active");
+                }, 200);
+            } else {
+                homeSectionDivH1.textContent = resData.speechContent;
+                say(resData.speechContent);
+                setTimeout(() => {
+                    location.reload();
+                }, 200);
+            }
 
         } else if (this.readyState == 3) {
 
@@ -111,7 +121,7 @@ form.addEventListener('submit', (event) => {
                 activeStatus();
                 setTimeout(() => {
                     removeStatus();
-                    location.reload()
+                    location.reload();
                 }, 5000);
             } else {
                 statusScreen.classList.remove("success");
