@@ -11,7 +11,6 @@ from . import interface
 
 #! Global functions calls-------------------------------------------------------------------
 connection.connect()
-interface.clean()
 interface.setup()
 
 
