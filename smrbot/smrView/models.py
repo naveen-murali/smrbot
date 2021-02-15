@@ -1,22 +1,15 @@
-import datetime
-import math, random   
+import datetime 
 
 class Model():
-    def __init__(self, name, phone, place):
+    def __init__(self, name, phone, place, otp):
         self.name = str(name)
-        self.phone = int(phone)
+        self.phone = "+91" + phone.strip()
         self.place = str(place)
-
-    def generateOTP(self): 
-        digits = "0123456789"
-        OTP = ""
-        for i in range(5) : 
-            OTP += digits[math.floor(random.random() * 10)] 
-        return OTP 
+        self.otp = otp
 
     def getModel(self):
         data = {
-            'otp': self.generateOTP(),
+            'otp': self.otp,
             'name': self.name,
             'phone': self.phone,
             'place': self.place,
