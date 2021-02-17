@@ -5,6 +5,7 @@ from time import sleep
 
 GPIO.setwarnings(False)
 irIn_Pin = 11
+sani_pin = 13
 bus = SMBus(1)
 tempSnsr = MLX90614(bus, address=0x5A)
 
@@ -12,6 +13,8 @@ tempSnsr = MLX90614(bus, address=0x5A)
 def setup():
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(irIn_Pin, GPIO.IN)
+    GPIO.setup(sani_pin, GPIO.OUT)
+    GPIO.output(sani_pin, GPIO.HIGH)
 
 
 # local functions------------------
@@ -40,6 +43,14 @@ def action():
         return get_avg(temp)
     else:
         return False
+
+# sanitizer on---------------------
+def active_sani():
+    GPIO.output(sani_pin, GPIO.LOW)
+
+# sanitizer off--------------------
+def deactive_sani():
+    GPIO.output(sani_pin, GPIO.HIGH)
 
 # cleaning gpio ports--------------
 def clean():
