@@ -3,7 +3,7 @@ state = {
     "db": None
 }
 
-url = 'mongodb+srv://smrbot:smrbot007@smrbot.qgasa.mongodb.net/testC?retryWrites=true&w=majority'
+url = 'mongodb+srv://smrbot:smrbot007@smrbot.qgasa.mongodb.net/customers?retryWrites=true&w=majority'
 
 def connect():
     dbStatus = False
@@ -11,7 +11,7 @@ def connect():
         client = None
         try:
             client = pymongo.MongoClient(url)
-            state['db'] = client.test
+            state['db'] = client.smrbot                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
             dbStatus = True
             print("-----------------[Connected]-----------------")
         except:

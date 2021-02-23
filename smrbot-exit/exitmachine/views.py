@@ -5,7 +5,7 @@ from time import sleep
 import datetime
 
 #! importing all localfiles-----------------------------------------------------------------
-from . import connection, models
+from . import connection
 # from . import interface
 
 
@@ -34,33 +34,29 @@ def display(req):
 def register(req):
     data = req.POST
     resData={}
-    # val = connection.get().testC.find_One(otp)  
-    # finder = {otp :""}
     val = str(req.POST['OTP'])
-    print(val)
-   
-    if connection.get().testC.find_one({'otp':val}):
-        try:
-            update = modelData.getModel()
-            res = connection.get().testC.update_one({'otp':val}, update)
-            connection.get().testC.delete_one({'otp':val})
-        except:
-            return JsonResponse({"status": False})
-        
-        if res.inserted_id:
+    res_find = connection.get().customers.find_one({'otp':val}) 
+    idValue = res_find["_id"]
+    nameValue = res_find["name"]
+    if res_find:
+        print("-------------we found out the data--------")
+        update = { "$set": {'exitTime':datetime.datetime.now()} }
+        res_update = connection.get().customers.update_one({'otp':val}, update)
+        if res_update:
             resData = {
                 "status": True,
-                "id": str(res.inserted_id),
-                "name": data['name'],
-                "speechContent": "Your registration is successfull. Welcome " + data['name'] + " !"
+                "id": str(idValue),
+                "name": nameValue,
+                "speechContent": "Your registration is successfull. Thank you " + nameValue + " !"
             }
         else:
             resData = {
                 "status": False,
-                "speechContent": "You are registration is failed, please try again !"
+                "speechContent": "Incorrect otp, please check the otp ,and, try again !"
             }
         return JsonResponse(resData)
     else:
+        
         resData = {
                 "status": False,
                 "speechContent": "Incorrect otp, please check the otp ,and, try again !"
