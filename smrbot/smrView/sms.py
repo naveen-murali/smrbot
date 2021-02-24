@@ -13,3 +13,6 @@ def connect():
 def sendSMS(phoneNum, msg):
     state['sms'].messages.create(from_="+12058810586", body=msg, to=phoneNum)
 
+if __name__ == "__main__":
+    connect()
+    sendSMS("+918086894243", "hi")

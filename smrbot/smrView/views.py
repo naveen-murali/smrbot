@@ -53,10 +53,11 @@ def register(req):
             "name": data['name'],
             "speechContent": "Your registration is successfull. Welcome " + data['name'] + " !"
         }
-        msg = f"   \
-            Your registration is successfull ':)'. {otp_code} is your OTP for Exit Machine.\
-            \n If any problem contact + 918086894243 and provide the code below \
-            \t{str(res.inserted_id)}"
+        msg = f"Your registration is successfull ':)'. {otp_code} is your OTP for Exit Machine.\
+            If any problem contact +918086894243 and provide the code below \
+            {str(res.inserted_id)}"
+        print(modelData.getModel()["phone"])
+        print(msg)
         sms.sendSMS(modelData.getModel()["phone"], msg)
     else:
         resData = {
