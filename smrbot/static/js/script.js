@@ -37,7 +37,15 @@ let qr_status = {
         value: 'http://127.0.0.1:3000/'
     });
 })();
-
+function generate_QR_code(id) {
+    let qrtext = `http://127.0.0.1:3000/${id}`;
+    qr_status.qr.set({
+        background: qr_status.color,
+        foreground: 'black',
+        size: 200,
+        value: qrtext
+    });
+}
 // activating darkmode after 7.00 o clock.
 (() => {
     let time1 = new Date();
