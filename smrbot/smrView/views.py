@@ -1,38 +1,19 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-
-from time import sleep
-import datetime
+# import json
 
 #! importing all localfiles-----------------------------------------------------------------
-from . import connection, models, sms, otp
-from . import interface
-
+from . import connection, models, interface, otp, sms
 
 #! Global functions calls-------------------------------------------------------------------
 connection.connect()
 sms.connect()
 interface.setup()
 
-
 #! Create your views here.------------------------------------------------------------------
 def display(req):
-    return render(req, 'content.html')
-
-
-def tempRead(req):
-    print("------------[ajax connected]------------")
-    temp = float(interface.action())
-
-    # temp = "a"
-    # while temp == "a":
-    #     temp = int(input("Enter num : "))
-
-    if temp and 32 < temp and temp < 35:
-        interface.active_sani()
-        return JsonResponse({"entryAllowed": True, "speechContent": "Please register your information."})
-    else:
-        return JsonResponse({"entryAllowed": False, "speechContent": "Your temperature has some variation, Please wait and try again or Visit a doctor."})
+    interface.deactive_sani()
+    return render(req, 'smrbot.html')
 
 
 def register(req):
@@ -56,8 +37,6 @@ def register(req):
         msg = f"Your registration is successfull ':)'. {otp_code} is your OTP for Exit Machine.\
             If any problem contact +918086894243 and provide the code below \
             {str(res.inserted_id)}"
-        print(modelData.getModel()["phone"])
-        print(msg)
         sms.sendSMS(modelData.getModel()["phone"], msg)
     else:
         resData = {
@@ -66,3 +45,31 @@ def register(req):
         }
     return JsonResponse(resData)
 
+
+# def create_docu():
+#     id = ""
+#     with open("qr_data.json", "r+") as qr_data:
+#         try:
+#             data = json.loads(qr_data)
+#             id = data['id']
+#         except:
+#             print("nothing")
+#             json.dump({"id": "123456", "otp": "020200"}, qr_data)
+def tempRead(req):
+    print("------------[ajax connected]------------")
+    temp = float(interface.action())
+
+    if temp and 32 < temp and temp < 35:
+        interface.active_sani()
+        # id = create_docu()
+        resData = {
+            "entryAllowed": True,
+            "speechContent": "Please register your information."
+        }
+    else:
+        resData = {
+            "entryAllowed": False,
+            "speechContent": "Your temperature has some variation, Please wait and try again or Visit a doctor."
+        }
+    
+    return JsonResponse(resData)

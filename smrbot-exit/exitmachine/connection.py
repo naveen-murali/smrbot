@@ -1,12 +1,21 @@
 import pymongo
-from pymongo import MongoClient
+state = {
+    "db": None
+}
 
-cluster = MongoClient("mongodb+srv://smrbot:smrbot007@smrbot.qgasa.mongodb.net/testC?retryWrites=true&w=majority")
-db = cluster["test"]
-collection = db["test"]
-collection.insert_one({"OTP":"1234"})
-def connect(OTP):
-    # this.OTP = OTP
-    print(collection.find({"OTP" : OTP}))
-    # return collection.find({"OTP" : OTP})
-    
+url = 'mongodb+srv://smrbot:smrbot007@smrbot.qgasa.mongodb.net/customers?retryWrites=true&w=majority'
+
+def connect():
+    dbStatus = False
+    while not dbStatus:
+        client = None
+        try:
+            client = pymongo.MongoClient(url)
+            state['db'] = client.smrbot                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+            dbStatus = True
+            print("-----------------[Connected]-----------------")
+        except:
+            print("-----------------[connection failed]-----------------")
+
+def get():
+    return state['db']

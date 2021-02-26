@@ -9,9 +9,6 @@ const statusH4 = document.querySelector("#status-h4");
 const loadingSection = document.querySelector('.loading-section');
 const loadingDiv = document.querySelector('.loading-div');
 
-// qr code portion.
-const qrSection = document.querySelector('.qr-section');
-const qrSectionDiv = document.querySelector('.qr-section div');
 
 // status portion.
 const statusSection = document.querySelector('.status-section');
@@ -33,57 +30,8 @@ function say(msg) {
     speech.rate = 1.07;
     speech.pitch = 1.1;
     window.speechSynthesis.speak(speech);
-  }
+}
   
-
-// document state checking
-document.onreadystatechange = () => {
-    if (document.readyState === 'complete') {
-
-        console.log(document.readyState);
-        getAjax();
-
-    }
-};
-let getAjax = () => {
-    console.log("ajax started");
-    let dt = Date();
-
-    //! AJAX request
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
-            console.log("response data");
-            let resData = JSON.parse(this.responseText);
-            console.log(resData);
-
-            homeSectionDiv.classList.remove("home-section-div-active");
-            say(resData.speechContent);
-            setTimeout(() => {
-                homeSection.classList.remove("home-section-active");
-            }, 200);
-
-        } else if (this.readyState == 3) {
-
-            console.log("loading")
-
-        } else if (this.status == 404 && this.status == 403) {
-
-            console.log("[error]");
-
-        }
-    };
-
-    // on time out of ajax
-    xhttp.ontimeout = (e) => {
-        console.log("time out");
-        console.log(Date() - dt);
-    };
-
-    xhttp.open("GET", "/tempRead/", true);
-    xhttp.send();
-};
 
 
 // form submitting event listner.
@@ -103,8 +51,8 @@ form.addEventListener('submit', (event) => {
             if (resData.status) {
                 statusScreen.classList.remove("failed");
                 statusScreen.classList.add("success");
-                statusH1.textContent = "registration successfull";
-                statusH4.textContent = `welcome ${resData.name}`;
+                statusH1.textContent = "Thank you for Comming";
+                statusH4.textContent = `Visit us Later`;
 
                 removeLoading();
                 say(resData.speechContent);
@@ -127,7 +75,6 @@ form.addEventListener('submit', (event) => {
                 }, 5000);
             }
 
-
         } else if (this.readyState == 3) {
             activeLoading();
         } else if (this.status == 404 && this.status == 403) {
@@ -148,8 +95,6 @@ form.addEventListener('submit', (event) => {
     };
 
     xhttp.open("POST", "/register/", true);
-    // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
     xhttp.send(formData);
 });
 
@@ -178,7 +123,3 @@ let removeStatus = () => {
     }, 200);
 };
 
-// qr-code section toggling.
-qrSectionDiv.addEventListener('click', (event) => {
-    qrSection.classList.toggle("qr-section-active");
-});

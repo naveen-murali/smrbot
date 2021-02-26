@@ -1,7 +1,7 @@
 from twilio.rest import Client
 
 account_sid = "AC54a6f0137ad395348284281c825268f8"
-auth_token = "89ecf74e03a45be98b01a01318a3165d"
+auth_token = "cbe4847b5f551c9404ee06729fc42a3c"
 
 state = {
     "sms": None

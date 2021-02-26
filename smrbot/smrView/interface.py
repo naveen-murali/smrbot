@@ -1,6 +1,6 @@
+import RPi.GPIO as GPIO
 from smbus2 import SMBus
 from mlx90614 import MLX90614
-import RPi.GPIO as GPIO
 from time import sleep
 
 GPIO.setwarnings(False)
@@ -55,3 +55,20 @@ def deactive_sani():
 # cleaning gpio ports--------------
 def clean():
     GPIO.cleanup()
+
+
+# TODO: DEBUGGING----------------------------------------------
+# def setup():
+#     print("---------------[set up]---------------")
+
+# def action():
+#     temp = "a"
+#     while temp == "a":
+#         temp = int(input("Enter num : "))
+#     return temp
+    
+# def active_sani():
+#     print("---------------[active_sani]---------------")
+    
+# def deactive_sani():
+#     print("---------------[deactive_sani]---------------")
