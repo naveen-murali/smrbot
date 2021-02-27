@@ -20,7 +20,7 @@ def register(req):
     data = req.POST
     resData={}
     val = str(req.POST['OTP'])
-    res_find = connection.get().customers.find_one({'otp':val}) 
+    res_find = connection.get().customers.find_one({'otp':val})
     idValue = res_find["_id"]
     nameValue = res_find["name"]
     

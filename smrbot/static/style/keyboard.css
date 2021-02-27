@@ -1,10 +1,8 @@
 * {
   margin: 0px;
   padding: 0px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
-  -webkit-transition: all 0.2s ease-in;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
   transition: all 0.2s ease-in;
 }
 
@@ -12,19 +10,10 @@ body {
   width: 100vw;
   min-height: 100vh;
   padding: 2rem 0rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
   background: #111111;
 }
 
@@ -40,10 +29,8 @@ body {
   bottom: 0%;
   padding: 1rem 0;
   text-align: center;
-  -webkit-box-shadow: 0px -2px 3px #1a1a1a;
-          box-shadow: 0px -2px 3px #1a1a1a;
+  box-shadow: 0px -2px 3px #1a1a1a;
   background: #151515;
-  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 
@@ -51,15 +38,9 @@ body {
   width: 7%;
   height: 2rem;
   font-size: 1rem;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   vertical-align: top;
   outline: none;
   margin: 0.3rem 1px;
@@ -68,17 +49,13 @@ body {
   border-radius: 0.5rem;
   cursor: pointer;
   color: #fff;
-  -webkit-box-shadow: -2px -4px 5px #1a1a1a, 2px 5px 5px #0a0a0a;
-          box-shadow: -2px -4px 5px #1a1a1a, 2px 5px 5px #0a0a0a;
-  -webkit-transition: all 0.2s ease-in;
+  box-shadow: -2px -4px 5px #1a1a1a, 2px 5px 5px #0a0a0a;
   transition: all 0.2s ease-in;
   background: #111111;
 }
 
 .keyboard_key:active {
-  -webkit-box-shadow: inset -2px -4px 5px #1a1a1a, inset 2px 5px 5px #0a0a0a;
-          box-shadow: inset -2px -4px 5px #1a1a1a, inset 2px 5px 5px #0a0a0a;
-  -webkit-transition: all 0.2s ease-in;
+  box-shadow: inset -2px -4px 5px #1a1a1a, inset 2px 5px 5px #0a0a0a;
   transition: all 0.2s ease-in;
 }
 
@@ -90,7 +67,6 @@ body {
   width: 9%;
   position: relative;
 }
-
 .keyboard_key--wide .keyboard_key--cap-indcate {
   position: absolute;
   right: 5px;
@@ -100,7 +76,6 @@ body {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.103);
 }
-
 .keyboard_key--wide .keyboard_key--cap-indcate.active {
   background-color: #e5ff00;
 }
@@ -123,63 +98,44 @@ body {
 body.light {
   background: #c7c7c7;
 }
-
 body.light .btn {
   border: 1px solid #c9c9c9;
   color: #222222;
   background: #c7c7c7;
-  -webkit-box-shadow: -5px -10px 15px #ececec88, 5px 10px 15px rgba(148, 148, 148, 0.541);
-          box-shadow: -5px -10px 15px #ececec88, 5px 10px 15px rgba(148, 148, 148, 0.541);
+  box-shadow: -5px -10px 15px #ececec88, 5px 10px 15px rgba(148, 148, 148, 0.541);
 }
-
 body.light .inpt {
   color: #222222;
   background-color: #c7c7c7;
-  -webkit-box-shadow: inset 2px 2px 5px rgba(148, 148, 148, 0.541), inset -5px -5px 10px #ececec88;
-          box-shadow: inset 2px 2px 5px rgba(148, 148, 148, 0.541), inset -5px -5px 10px #ececec88;
+  box-shadow: inset 2px 2px 5px rgba(148, 148, 148, 0.541), inset -5px -5px 10px #ececec88;
 }
-
 body.light .btn:hover {
-  -webkit-box-shadow: -4px -4px 5px #ececec88, 4px 4px 5px rgba(148, 148, 148, 0.541), inset 0 0 2px 0px #dfdfdf;
-          box-shadow: -4px -4px 5px #ececec88, 4px 4px 5px rgba(148, 148, 148, 0.541), inset 0 0 2px 0px #dfdfdf;
+  box-shadow: -4px -4px 5px #ececec88, 4px 4px 5px rgba(148, 148, 148, 0.541), inset 0 0 2px 0px #dfdfdf;
 }
-
 body.light .btn:active {
-  -webkit-box-shadow: inset -5px -4px 5px rgba(148, 148, 148, 0.541), inset 4px 4px 5px #ececec88;
-          box-shadow: inset -5px -4px 5px rgba(148, 148, 148, 0.541), inset 4px 4px 5px #ececec88;
+  box-shadow: inset -5px -4px 5px rgba(148, 148, 148, 0.541), inset 4px 4px 5px #ececec88;
 }
-
 body.light .inpt:focus {
-  -webkit-box-shadow: inset 2px 2px 2px rgba(148, 148, 148, 0.541), inset -2px -2px 5px #ececec88;
-          box-shadow: inset 2px 2px 2px rgba(148, 148, 148, 0.541), inset -2px -2px 5px #ececec88;
+  box-shadow: inset 2px 2px 2px rgba(148, 148, 148, 0.541), inset -2px -2px 5px #ececec88;
 }
-
 body.light .txt {
   color: #949494;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.664);
 }
-
 body.light .num_keyboard,
 body.light .keyboard {
-  -webkit-box-shadow: 0px -2px 3px rgba(148, 148, 148, 0.541);
-          box-shadow: 0px -2px 3px rgba(148, 148, 148, 0.541);
+  box-shadow: 0px -2px 3px rgba(148, 148, 148, 0.541);
   background: #c7c7c7;
 }
-
 body.light .keyboard_key {
   color: rgba(0, 0, 0, 0.76);
-  -webkit-box-shadow: -2px -4px 5px #ececec88, 2px 5px 5px rgba(148, 148, 148, 0.541);
-          box-shadow: -2px -4px 5px #ececec88, 2px 5px 5px rgba(148, 148, 148, 0.541);
+  box-shadow: -2px -4px 5px #ececec88, 2px 5px 5px rgba(148, 148, 148, 0.541);
   background: #c7c7c7;
 }
-
 body.light .keyboard_key:active {
-  -webkit-box-shadow: inset -2px -4px 5px #ececec88, inset 2px 5px 5px rgba(148, 148, 148, 0.541);
-          box-shadow: inset -2px -4px 5px #ececec88, inset 2px 5px 5px rgba(148, 148, 148, 0.541);
-  -webkit-transition: all 0.2s ease-in;
+  box-shadow: inset -2px -4px 5px #ececec88, inset 2px 5px 5px rgba(148, 148, 148, 0.541);
   transition: all 0.2s ease-in;
 }
-
 body.light .keyboard_key--dark {
   color: green;
 }
@@ -191,32 +147,33 @@ body.light .keyboard_key--dark {
     height: 2.68rem;
   }
 }
-
 @media screen and (min-width: 769px) {
   .keyboard_key {
     margin: 0.3rem 0.2rem;
     width: 6%;
   }
+
   .keyboard_key--wide {
     width: 10%;
   }
+
   .keyboard__key--extra-wide {
     width: 36%;
     max-width: 500px;
   }
 }
-
 @media screen and (min-width: 1201px) {
   .keyboard_key {
     margin: 0.4rem 0.25rem;
     max-width: 4.5%;
     height: 2.8rem;
   }
+
   .keyboard_key--wide {
     max-width: 8%;
   }
+
   .keyboard__key--extra-wide {
     max-width: 30%;
   }
-}
-/*# sourceMappingURL=keyboard.css.map */
+}/*# sourceMappingURL=keyboard.css.map */

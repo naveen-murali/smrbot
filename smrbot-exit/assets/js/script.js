@@ -117,7 +117,7 @@ form.addEventListener('submit', (event) => {
                 statusScreen.classList.remove("success");
                 statusScreen.classList.add("failed");
                 statusH1.textContent = "registration failed";
-                statusH4.textContent = `pleace try again`;
+                statusH4.textContent = `please try again`;
 
                 removeLoading();
                 say(resData.speechContent);

@@ -384,22 +384,6 @@ body.light{
             color: #db1600;
         }
     }
-    .result-section{
-        background: $-bg-lit-clr-op;
-    }
-    .result-div{
-        box-shadow: -5px -5px 10px $-sdw-lit-clr-2, 5px 5px 10px $-sdw-lit-clr-1;
-        background: $-bg-lit-clr;
-    }
-
-    .result-btns{
-        .confirm{
-            color: rgb(2, 199, 2);
-        }
-        .reject{
-            color: red;
-        }
-    }
 }
 // ------------------------------------------------------------------------------------------------------------------------
 
