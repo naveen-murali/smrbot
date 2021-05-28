@@ -1,8 +1,10 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
 
@@ -11,10 +13,19 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   padding: 2rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: #111111;
 }
 
@@ -24,7 +35,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type=input] {
+input[type='input'] {
   -moz-appearance: textfield;
 }
 
@@ -39,7 +50,9 @@ input[type=input] {
   color: #7c7c7c;
   cursor: pointer;
   background: #111111;
-  box-shadow: 0px -12px 10px #1a1a1a, 0px 12px 10px #0a0a0a;
+  -webkit-box-shadow: 0px -12px 10px #1a1a1a, 0px 12px 10px #0a0a0a;
+          box-shadow: 0px -12px 10px #1a1a1a, 0px 12px 10px #0a0a0a;
+  -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
 
@@ -47,7 +60,9 @@ input[type=input] {
   padding: 1rem;
   color: #7c7c7c;
   background-color: #111111;
-  box-shadow: inset 2px 2px 5px #1a1a1a, inset -5px -5px 10px #0a0a0a;
+  -webkit-box-shadow: inset 2px 2px 5px #1a1a1a, inset -5px -5px 10px #0a0a0a;
+          box-shadow: inset 2px 2px 5px #1a1a1a, inset -5px -5px 10px #0a0a0a;
+  -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
 
@@ -59,57 +74,85 @@ input[type=input] {
 }
 
 .btn:hover {
-  box-shadow: 0px -4px 5px #1a1a1a, 0px 5px 5px #0a0a0a;
+  -webkit-box-shadow: 0px -4px 5px #1a1a1a, 0px 5px 5px #0a0a0a;
+          box-shadow: 0px -4px 5px #1a1a1a, 0px 5px 5px #0a0a0a;
 }
 
 .btn:active {
-  box-shadow: inset 0px -4px 5px #1a1a1a, inset 0px 5px 5px #0a0a0a;
+  -webkit-box-shadow: inset 0px -4px 5px #1a1a1a, inset 0px 5px 5px #0a0a0a;
+          box-shadow: inset 0px -4px 5px #1a1a1a, inset 0px 5px 5px #0a0a0a;
 }
 
 .inpt:focus {
-  box-shadow: inset 2px 2px 2px #1a1a1a, inset -2px -2px 5px #0a0a0a;
+  -webkit-box-shadow: inset 2px 2px 2px #1a1a1a, inset -2px -2px 5px #0a0a0a;
+          box-shadow: inset 2px 2px 2px #1a1a1a, inset -2px -2px 5px #0a0a0a;
 }
 
 .txt {
   color: #1a1a1a;
   color: rgba(255, 255, 255, 0.205);
   text-shadow: 1px 1px 1px #0a0a0a;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 main {
   width: 100%;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0rem 1rem;
 }
+
 main .logo {
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 50%;
+  display: -ms-grid;
   display: grid;
   place-items: center;
-  box-shadow: 0px -11px 11px #1a1a1a, 0px 11px 11px #0a0a0a;
+  -webkit-box-shadow: 0px -11px 11px #1a1a1a, 0px 11px 11px #0a0a0a;
+          box-shadow: 0px -11px 11px #1a1a1a, 0px 11px 11px #0a0a0a;
 }
+
 main .logo img {
   width: 80%;
   height: 80%;
 }
+
 main h1.txt {
   padding: 1rem;
   color: rgba(255, 255, 255, 0.178);
   text-shadow: 1px 1px 5px black;
 }
+
 main form {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 main form .inpt {
   width: 100%;
   margin-bottom: 1.5rem;
@@ -117,19 +160,33 @@ main form .inpt {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.466);
 }
-main form input::-moz-placeholder {
+
+main form input::-webkit-input-placeholder {
   text-transform: capitalize;
 }
+
 main form input:-ms-input-placeholder {
   text-transform: capitalize;
 }
+
+main form input::-ms-input-placeholder {
+  text-transform: capitalize;
+}
+
 main form input::placeholder {
   text-transform: capitalize;
 }
+
 main form .submit {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-transform: capitalize;
   letter-spacing: 0.5px;
   margin-top: 0.2rem;
@@ -137,15 +194,19 @@ main form .submit {
   padding: 1rem 4rem;
   color: rgba(255, 255, 255, 0.466);
 }
+
 main form .submit i {
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
   padding-right: 1px;
   font-weight: 700;
   font-size: 1.1rem;
 }
+
 main .contact {
   margin-top: 1.2rem;
 }
+
 main .contact span {
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -159,63 +220,88 @@ main .contact span {
   width: 100vw;
   height: 100vh;
   display: none;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: #1111118c;
 }
 
 .loading-div {
   width: 4rem;
   height: 4rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 50%;
   background: #111111;
   border: 7px solid #111111;
-  box-shadow: 0px -11px 11px #1a1a1a, 0px 11px 11px #0a0a0a, inset 0px -4px 4px #1a1a1a, inset 0px 4px 4px #0a0a0a;
-  transform: translateY(-80vh);
+  -webkit-box-shadow: 0px -11px 11px #1a1a1a, 0px 11px 11px #0a0a0a, inset 0px -4px 4px #1a1a1a, inset 0px 4px 4px #0a0a0a;
+          box-shadow: 0px -11px 11px #1a1a1a, 0px 11px 11px #0a0a0a, inset 0px -4px 4px #1a1a1a, inset 0px 4px 4px #0a0a0a;
+  -webkit-transform: translateY(-80vh);
+          transform: translateY(-80vh);
   opacity: 0;
-  transform: scale(0.2);
+  -webkit-transform: scale(0.2);
+          transform: scale(0.2);
+  -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
+
 .loading-div img {
   width: 85%;
   height: 85%;
 }
 
 .loading-section.loading-section-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .loading-div.loading-div-active {
   opacity: 1;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
+
 .loading-div.loading-div-active img {
   -webkit-animation: loading 2s ease infinite;
           animation: loading 2s ease infinite;
-  transform-origin: center;
+  -webkit-transform-origin: center;
+          transform-origin: center;
   transform-box: fill-box;
 }
 
 @-webkit-keyframes loading {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes loading {
   from {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
+
 .status-section {
   z-index: 5;
   position: fixed;
@@ -224,12 +310,18 @@ main .contact span {
   width: 100vw;
   height: 100vh;
   display: none;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: #1111118c;
 }
 
 .status-section.status-section-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -238,27 +330,34 @@ main .contact span {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.2);
+  -webkit-transform: translate(-50%, -50%) scale(0.2);
+          transform: translate(-50%, -50%) scale(0.2);
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
-  box-shadow: -5px -5px 20px #1a1a1a, 5px 5px 10px #0a0a0a;
+  -webkit-box-shadow: -5px -5px 20px #1a1a1a, 5px 5px 10px #0a0a0a;
+          box-shadow: -5px -5px 20px #1a1a1a, 5px 5px 10px #0a0a0a;
   background: #111111;
+  -webkit-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
 }
+
 .status-screen h1, .status-screen h4 {
   text-transform: capitalize;
 }
+
 .status-screen h1 {
   font-weight: 700;
   padding-bottom: 0.5rem;
 }
+
 .status-screen h4 {
   color: #7c7c7c;
 }
 
 .status-screen.status-screen-active {
-  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
 }
 
 .status-screen.success h1 {
@@ -277,9 +376,16 @@ main .contact span {
   width: 100vw;
   min-height: 100vh;
   display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: #1111118c;
   padding: 1rem 0;
 }
@@ -289,29 +395,40 @@ main .contact span {
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
-  box-shadow: -5px -5px 10px #1a1a1a, 5px 5px 10px #0a0a0a;
+  -webkit-box-shadow: -5px -5px 10px #1a1a1a, 5px 5px 10px #0a0a0a;
+          box-shadow: -5px -5px 10px #1a1a1a, 5px 5px 10px #0a0a0a;
   background: #111111;
+  -webkit-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
   margin: 0 0 1rem 0;
 }
 
 .result-contents,
 .result-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   letter-spacing: 0.5px;
 }
+
 .result-contents h4,
 .result-btns h4 {
   padding: 0 0 2rem 0;
   text-transform: capitalize;
 }
+
 .result-contents .confirm,
 .result-btns .confirm {
   color: #02c702;
   letter-spacing: 0.5px;
 }
+
 .result-contents .reject,
 .result-btns .reject {
   color: red;
@@ -319,76 +436,105 @@ main .contact span {
 }
 
 .result-section.result-section-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 body.light {
   background: #c7c7c7;
 }
+
 body.light .btn {
   border: 1px solid #c9c9c9;
   color: #222222;
   background: #c7c7c7;
-  box-shadow: -5px -10px 15px #ececec88, 5px 10px 15px rgba(148, 148, 148, 0.541);
+  -webkit-box-shadow: -5px -10px 15px #ececec88, 5px 10px 15px rgba(148, 148, 148, 0.541);
+          box-shadow: -5px -10px 15px #ececec88, 5px 10px 15px rgba(148, 148, 148, 0.541);
 }
+
 body.light .inpt {
   color: #222222;
   background-color: #c7c7c7;
-  box-shadow: inset 2px 2px 5px rgba(148, 148, 148, 0.541), inset -5px -5px 10px #ececec88;
+  -webkit-box-shadow: inset 2px 2px 5px rgba(148, 148, 148, 0.541), inset -5px -5px 10px #ececec88;
+          box-shadow: inset 2px 2px 5px rgba(148, 148, 148, 0.541), inset -5px -5px 10px #ececec88;
 }
+
 body.light .btn:hover {
-  box-shadow: -4px -4px 5px #ececec88, 4px 4px 5px rgba(148, 148, 148, 0.541), inset 0 0 2px 0px #dfdfdf;
+  -webkit-box-shadow: -4px -4px 5px #ececec88, 4px 4px 5px rgba(148, 148, 148, 0.541), inset 0 0 2px 0px #dfdfdf;
+          box-shadow: -4px -4px 5px #ececec88, 4px 4px 5px rgba(148, 148, 148, 0.541), inset 0 0 2px 0px #dfdfdf;
 }
+
 body.light .btn:active {
-  box-shadow: inset -5px -4px 5px rgba(148, 148, 148, 0.541), inset 4px 4px 5px #ececec88;
+  -webkit-box-shadow: inset -5px -4px 5px rgba(148, 148, 148, 0.541), inset 4px 4px 5px #ececec88;
+          box-shadow: inset -5px -4px 5px rgba(148, 148, 148, 0.541), inset 4px 4px 5px #ececec88;
 }
+
 body.light .inpt:focus {
-  box-shadow: inset 2px 2px 2px rgba(148, 148, 148, 0.541), inset -2px -2px 5px #ececec88;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(148, 148, 148, 0.541), inset -2px -2px 5px #ececec88;
+          box-shadow: inset 2px 2px 2px rgba(148, 148, 148, 0.541), inset -2px -2px 5px #ececec88;
 }
+
 body.light .txt {
   color: #949494;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.664);
 }
+
 body.light main .logo {
-  box-shadow: 0px -11px 11px #ececec88, 0px 11px 11px rgba(148, 148, 148, 0.541);
+  -webkit-box-shadow: 0px -11px 11px #ececec88, 0px 11px 11px rgba(148, 148, 148, 0.541);
+          box-shadow: 0px -11px 11px #ececec88, 0px 11px 11px rgba(148, 148, 148, 0.541);
 }
+
 body.light main form .inpt {
   font-weight: 700;
   color: unset;
 }
+
 body.light main form .submit {
   color: #ae1100;
 }
+
 body.light .status-section,
 body.light .loading-section {
   background: #c7c7c771;
 }
+
 body.light .loading-div {
   background: #c7c7c7;
   border-color: #c7c7c7;
-  box-shadow: 0px -11px 11px #ececec88, 0px 11px 11px rgba(148, 148, 148, 0.541), inset 0px -4px 4px #ececec88, inset 0px 4px 4px rgba(148, 148, 148, 0.541);
+  -webkit-box-shadow: 0px -11px 11px #ececec88, 0px 11px 11px rgba(148, 148, 148, 0.541), inset 0px -4px 4px #ececec88, inset 0px 4px 4px rgba(148, 148, 148, 0.541);
+          box-shadow: 0px -11px 11px #ececec88, 0px 11px 11px rgba(148, 148, 148, 0.541), inset 0px -4px 4px #ececec88, inset 0px 4px 4px rgba(148, 148, 148, 0.541);
 }
+
 body.light .status-screen {
   border: 1px solid rgba(255, 255, 255, 0.192);
   background: #c7c7c7;
-  box-shadow: -5px -5px 20px #ececec88, 5px 5px 10px rgba(148, 148, 148, 0.541);
+  -webkit-box-shadow: -5px -5px 20px #ececec88, 5px 5px 10px rgba(148, 148, 148, 0.541);
+          box-shadow: -5px -5px 20px #ececec88, 5px 5px 10px rgba(148, 148, 148, 0.541);
 }
+
 body.light .status-screen.success h1 {
   color: #008300;
 }
+
 body.light .status-screen.failed h1 {
   color: #db1600;
 }
+
 body.light .result-section {
   background: #c7c7c771;
 }
+
 body.light .result-div {
-  box-shadow: -5px -5px 10px #ececec88, 5px 5px 10px rgba(148, 148, 148, 0.541);
+  -webkit-box-shadow: -5px -5px 10px #ececec88, 5px 5px 10px rgba(148, 148, 148, 0.541);
+          box-shadow: -5px -5px 10px #ececec88, 5px 5px 10px rgba(148, 148, 148, 0.541);
   background: #c7c7c7;
 }
+
 body.light .result-btns .confirm {
   color: #02c702;
 }
+
 body.light .result-btns .reject {
   color: red;
 }
@@ -398,6 +544,7 @@ body.light .result-btns .reject {
     width: 75%;
   }
 }
+
 @media screen and (min-width: 769px) {
   main {
     width: 60%;
@@ -405,12 +552,12 @@ body.light .result-btns .reject {
   main .logo img {
     width: 5vw;
   }
-
   .result-div,
-.status-screen {
+  .status-screen {
     width: 50%;
   }
 }
+
 @media screen and (min-width: 1025px) {
   main {
     width: 50%;
@@ -418,12 +565,12 @@ body.light .result-btns .reject {
   main .contact span {
     font-size: 12px;
   }
-
   .result-div,
-.status-screen {
+  .status-screen {
     width: 35%;
   }
 }
+
 @media screen and (min-width: 1201px) {
   main {
     width: 32%;
@@ -434,4 +581,5 @@ body.light .result-btns .reject {
   main .contact span {
     font-size: 12px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

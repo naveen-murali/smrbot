@@ -1,0 +1,343 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #181b1e;
+  width: 100vw;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.form-section {
+  width: 20rem;
+  padding: 2rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.185);
+  background: rgba(255, 255, 255, 0.952);
+  border-radius: 0.2rem;
+  color: rgba(0, 0, 0, 0.664);
+  font-weight: 600;
+}
+
+.form-section form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem 0 0 0;
+}
+
+.form-section form input {
+  outline: none;
+  border-radius: 0.2rem;
+  color: rgba(0, 0, 0, 0.664);
+}
+
+.form-section form label {
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 0 1rem 0;
+  color: #145dfa;
+}
+
+.form-section form label input {
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  font-weight: 400;
+  border: 1px solid rgba(0, 0, 0, 0.185);
+  letter-spacing: 0.5px;
+  font-size: 14px;
+}
+
+.form-section form label input::-webkit-input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.form-section form label input:-ms-input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.form-section form label input::-ms-input-placeholder {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.form-section form label input::placeholder {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.form-section form input[type=submit] {
+  border: 2px solid red;
+  padding: 0.4rem 1rem;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  color: red;
+}
+
+.form-section form input[type=submit]:hover {
+  color: rgba(255, 255, 255, 0.884);
+  background: red;
+}
+
+.form-section p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+  padding: 0.5rem;
+  font-size: 13px;
+  font-weight: 400;
+  background: rgba(255, 166, 0, 0.39);
+  border-radius: inherit;
+  border: 1px solid orange;
+  border-left: 3px solid orange;
+  color: rgba(0, 0, 0, 0.911);
+}
+
+.form-section p span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 0.5rem 0 0;
+  color: #a16900;
+  pointer-events: none;
+}
+
+.form-section .error {
+  border-color: red;
+  background: rgba(0, 0, 0, 0.075);
+  color: red;
+  margin: 0.2rem 0;
+}
+
+.confirm-account-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.confirm-account-container h4 {
+  text-transform: capitalize;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  justify-self: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.confirm-account-container h4 div {
+  width: 5rem;
+  height: 2px;
+  background: black;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.confirm-account-container h4 div .buttons, .confirm-account-container h4 div h5 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.confirm-account-container--confirm h4 div {
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  width: 100%;
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  border-radius: 0.2rem;
+  background: rgba(255, 255, 255, 0.952);
+  border: 1px solid rgba(0, 0, 0, 0.185);
+}
+
+.confirm-account-container--confirm h4 div .buttons, .confirm-account-container--confirm h4 div h5 {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.confirm-account-container--confirm h4 div h5 {
+  font-weight: 400;
+}
+
+.confirm-account-container--confirm h4 div .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 0;
+}
+
+.confirm-account-container--confirm h4 div .buttons a {
+  padding: 0.4rem 1rem;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.confirm-account-container--confirm h4 div .buttons .cancel {
+  border: 2px solid grey;
+  color: grey;
+}
+
+.confirm-account-container--confirm h4 div .buttons .cancel:hover {
+  color: rgba(255, 255, 255, 0.884);
+  background: grey;
+}
+
+.confirm-account-container--confirm h4 div .buttons .confirm {
+  border: 2px solid red;
+  color: red;
+}
+
+.confirm-account-container--confirm h4 div .buttons .confirm:hover {
+  color: rgba(255, 255, 255, 0.884);
+  background: red;
+}
+
+.account-confirm {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5rem;
+  border: 2px solid #181b1e;
+  border-left: 4px solid black;
+  background: #181b1e80;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.account-confirm button {
+  outline: none;
+  border: none;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-size: 14px;
+  text-decoration: none;
+  color: white;
+  background: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.account-confirm button img {
+  padding: 0.2rem;
+  background: white;
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.account-confirm button:hover {
+  color: #adb5fd;
+}
+
+.account-confirm button:hover img {
+  background: #adb5fd;
+}
+/*# sourceMappingURL=getUserId.css.map */

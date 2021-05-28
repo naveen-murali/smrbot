@@ -24,6 +24,10 @@ const frontSection = document.querySelector('.front-section');
 // front content.
 const frontSectionH1 = document.querySelector('.front-text');
 
+
+// uri
+const URI = 'http://127.0.0.1:3000/';
+
 // qrcode variable.
 let qr_status = {
     qr: null,
@@ -34,11 +38,11 @@ let qr_status = {
     qr_status.qr = new QRious({
         element: document.getElementById('qr-code'),
         size: 200,
-        value: 'http://127.0.0.1:3000/'
+        value: `${URI}`
     });
 })();
 function generate_QR_code() {
-    let qrtext = `http://127.0.0.1:3000/`;
+    let qrtext = `${URI}`;
     qr_status.qr.set({
         background: qr_status.color,
         foreground: 'black',
@@ -46,7 +50,7 @@ function generate_QR_code() {
         value: qrtext
     });
 }
-generate_QR_code()
+generate_QR_code();
 // activating darkmode after 7.00 o clock.
 (() => {
     let time1 = new Date();
@@ -94,29 +98,29 @@ document.onreadystatechange = () => {
     }
 };
 let get_temp_Ajax = () => {
-    // console.log("ajax started");
-
     //! AJAX request
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            // console.log("tempRead response data");
             let resData = JSON.parse(this.responseText);
-            // console.log("tempRead", resData);
 
             if (resData.entryAllowed) {
 
                 // generate_QR_code(resData.id);
-
                 frontSection.classList.add("front-section-disable");
                 say(resData.speechContent);
+
             } else {
+
                 frontSectionH1.innerHTML = `<i class="material-icons">warning</i> <br /> ${resData.speechContent}`;
                 frontSection.classList.add("warning");
+                
                 say(resData.speechContent);
+
                 setTimeout(() => {
                     location.reload();
                 }, 5000);
+
             }
 
         } else if (this.status == 404 || this.status == 403) {
@@ -127,12 +131,6 @@ let get_temp_Ajax = () => {
             say(resData.speechContent);
         }
     };
-
-    // on time out of ajax
-    // xhttp.ontimeout = (e) => {
-    //     console.log("time out");
-    //     console.log(Date() - dt);
-    // };
 
     xhttp.open("GET", "/tempRead/", true);
     xhttp.send();

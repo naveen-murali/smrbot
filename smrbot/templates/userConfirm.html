@@ -1,0 +1,36 @@
+{% extends 'getUserId_layout.html' %}
+{% block userId %}
+<section class="form-section">
+    <div class="confirm-account-container">
+        <h4>
+            confirm account 
+            <div>
+                <h5>Are you sure?? If you continue you can't go back.</h5>
+                <main class="buttons">
+                    <a href="/" class="cancel">cancel</a>
+                    <a href="/registerUserId?userId={{id}}" class="confirm">confirm</a>
+                </main>
+            </div>
+        </h4>
+        <div class="account-confirm">
+            <button>
+                {%if img%}
+                <img width="48" height="48" src="{{img}}" alt="profile images">
+                {%else%}
+                <img width="48" height="48" src="{{imgUrl}}/Logo-light.svg" alt="profile images">
+                {%endif%}
+                {{ email }}
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    const container = document.querySelector('.confirm-account-container');
+    const btn = document.querySelector('.account-confirm button');
+
+    btn.addEventListener('click', (e)=>{
+        container.classList.add('confirm-account-container--confirm');
+    });
+</script>
+{% endblock %}

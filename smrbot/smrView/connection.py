@@ -3,7 +3,7 @@ state = {
     "db": None
 }
 
-url = 'mongodb+srv://smrbot:smrbot007@smrbot.qgasa.mongodb.net/smrbot?retryWrites=true&w=majority'
+url = 'mongodb+srv://smrbot:LGLhretcAyqjF3P8@smrbot.qgasa.mongodb.net/smrbot?retryWrites=true&w=majority'
 
 def connect():
     dbStatus = False
