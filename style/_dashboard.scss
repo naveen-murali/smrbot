@@ -1,0 +1,129 @@
+// dashboard
+.dashboad-body{
+    width: 100%;
+    min-height: calc(100% - 2.25rem);
+    padding: 1rem 0 0 0;
+    display: grid;
+    grid-template-areas: 
+        'customer'
+        'new_customer'
+        'alert' 
+        'graph' 
+        'footer';
+    grid-column-gap: 2rem;
+    grid-row-gap: 1.2rem;
+    color: $-text-clr;
+}
+.card{
+    cursor: pointer;
+    border: $-border;
+    min-width: 5rem;
+    border-radius: 0.2rem;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: $-slide-dark;
+    transition: all 0.2s ease-in;
+    box-shadow: 0px 4px 13px 0px #16191b;
+}
+.card:hover{
+    box-shadow: none;
+}
+.card-content{
+    text-align: right;
+    text-transform: capitalize;
+
+    h4{
+        font-size: 16px;
+        font-weight: 600;
+        padding-bottom: 0.4rem;
+    }
+    h3{
+        font-size: 26px;
+        letter-spacing: 1px;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+.card-icon{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    span{
+        font-size: 60px;
+    }
+}
+.customer{
+    grid-area: customer;
+    border: 1px solid $-ylw-clr;
+
+    .card-content{
+        h3{
+            color: $-ylw-clr;
+        }
+    }
+    .card-icon{
+        span{
+            color: $-ylw-clr;
+        }
+    }
+}
+.new_customer{
+    grid-area: new_customer;
+    border: 1px solid $-blue-clr;
+
+    .card-content{
+        h3{
+            color: $-blue-clr;
+        }
+    }
+    .card-icon{
+        span{
+            color: $-blue-clr;
+        }
+    }
+}
+.alert{
+    grid-area: alert;
+    border: 1px solid $-red-clr;
+
+    .card-content{
+        h3{
+            color: $-red-clr;
+        }
+    }
+    .card-icon{
+        span{
+            color: $-red-clr;
+        }
+    }
+}
+.graph{
+    grid-area: graph;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    border-radius: 0.2rem;
+    background: $-slide-dark;
+    padding: 1rem 0rem;
+    border: $-border;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    div{
+        width: 100%;
+        padding: 0 0 1.5rem 1rem;
+        h5{
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: capitalize;
+            letter-spacing: 0.5px;
+        }
+    }
+    canvas{
+        cursor: pointer;
+    }
+}

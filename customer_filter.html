@@ -148,43 +148,88 @@
                 <!-- path potion -->
                 <div class="content-path">
                     <a href="/index.html"><span class="material-icons">home</span>dashboard</a>
+                    <p>/</p><a href="/customer.html">customers</a>
+                    <p>/</p><a href="/customer_filter.html">customer_filter</a>
                 </div>
 
                 <!-- content body -->
-                <div class="dashboad-body">
-                    <div class="card customer">
-                        <div class="card-icon">
-                            <span class="material-icons">group</span>
-                        </div>
-                        
-                        <div class="card-content">
-                            <h4>total customers</h4>
-                            <h3>6546</h3>
-                        </div>
+                <div class="content-body customer-body">
+                    <!-- sms button and total customer counts -->
+                    <div class="smsBtn-container">
+                        <h4>Total Customers: <span>50</span></h4>
+                        <a href="#" class="smsBtn" data-ids="1,2,3">
+                            <span class="material-icons">sms</span>
+                            Send Warning
+                        </a>
                     </div>
-                    <div class="card new_customer">
-                        <div class="card-icon">
-                            <span class="material-icons">group_add</span>
-                        </div>
-                        <div class="card-content">
-                            <h4>new customers</h4>
-                            <h3>646354</h3>
-                        </div>
-                    </div>
-                    <div class="card alert">
-                        <div class="card-icon">
-                            <span class="material-icons">new_releases</span>
-                        </div>
-                        <div class="card-content">
-                            <h4>New Alerts</h4>
-                            <h3>67465</h3>
-                        </div>
-                    </div>
-                    <div class="graph">
-                        <div>
-                            <h5>customers chart</h5>
-                        </div>
-                        <canvas id="myChart"></canvas>
+
+                    <div class="table-div">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="txt-left tName">name</th>
+                                    <th class="txt-left tPhone">phone no.</th>
+                                    <th class="txt-left tTime">visited time</th>
+                                    <th>SMS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+    
+                                <tr>
+                                    <td class="tName">Nijithlal</td>
+                                    <td class="tPhone">+918547099618</td>
+                                    <td class="tTime">
+                                        entry time : 2021-02-15T13:09:13.524+00:00 <br>
+                                        exit time : 2021-02-23T17:34:06.162+00:00
+                                    </td>
+                                    <td id="option-1" class="txt-center tOption">
+                                        <button id="sndWrngBtn-1" onclick="sendSMS('1')">
+                                            Send Warning
+                                        </button>
+                                        <h3>
+                                            <span class="material-icons sms--loading">refresh</span>
+                                            <span class="material-icons sms--done">check_circle</span>
+                                        </h3>
+                                        <div class="sms--warning">
+                                            <span class="material-icons">warning</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="tName">Nijithlal</td>
+                                    <td class="tPhone">+918547099618</td>
+                                    <td class="tTime">
+                                        entry time : 2021-02-15T13:09:13.524+00:00 <br>
+                                        exit time : 2021-02-23T17:34:06.162+00:00
+                                    </td>
+                                    <td id="option-2" class="txt-center tOption">
+                                        <button id="sndWrngBtn-2" onclick="sendSMS('2')">Send Warning</button>
+                                        <h3>
+                                            <span class="material-icons sms--loading">refresh</span>
+                                            <span class="material-icons sms--done">check_circle</span>
+                                        </h3>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="tName">Nijithlal</td>
+                                    <td class="tPhone">+918547099618</td>
+                                    <td class="tTime">
+                                        entry time : 2021-02-15T13:09:13.524+00:00 <br>
+                                        exit time : 2021-02-23T17:34:06.162+00:00
+                                    </td>
+                                    <td id="option-3" class="txt-center tOption">
+                                        <button id="sndWrngBtn-3" onclick="sendSMS('3')">Send Warning</button>
+                                        <h3>
+                                            <span class="material-icons sms--loading">refresh</span>
+                                            <span class="material-icons sms--done">check_circle</span>
+                                        </h3>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -196,5 +241,6 @@
     </section>
 
     <script src="javascript/script.js"></script>
+    <script src="javascript/customer-filter-script.js"></script>
 </body>
 </html>

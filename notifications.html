@@ -32,7 +32,7 @@
             </div>
 
             <div class="nav-icon profile-icon">
-                <img src="./images/Logo-light.svg" alt="profile image">
+                <img src="https://wallpaperaccess.com/full/254646.jpg" alt="profile image">
             </div>
         </div>
     </nav>
@@ -42,7 +42,7 @@
         <div class="profile">
             <div class="profile-img-name">
                 <div class="profile-img">
-                    <img src="./images/Logo-light.svg" alt="profile-image">
+                    <img src="https://wallpaperaccess.com/full/254646.jpg" alt="profile-image">
                 </div>
                 <h4 class="profile-name">Naveen Murali</h4>
             </div>
@@ -98,7 +98,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/search.html">
+                        <a href="/customer.html">
                             <div>
                                 <span class="material-icons categories-anim">list_alt</span>customers
                             </div>
@@ -110,7 +110,7 @@
                     <li>
                         <a href="#">
                             <div>
-                                <span class="material-icons categories-anim">notifications_none</span>notifications
+                                <span class="material-icons categories-anim">notifications_none</span>notifications & alerts
                             </div>
                             <div>
                                 <span class="material-icons">keyboard_arrow_right</span>
@@ -148,43 +148,89 @@
                 <!-- path potion -->
                 <div class="content-path">
                     <a href="/index.html"><span class="material-icons">home</span>dashboard</a>
+                    <p>/</p><a href="/notifications.html">notifications</a>
                 </div>
 
-                <!-- content body -->
-                <div class="dashboad-body">
-                    <div class="card customer">
-                        <div class="card-icon">
-                            <span class="material-icons">group</span>
+                <!-- profile body -->
+                <div class="content-body profile-body">        
+                    <div class="notifications-section">
+                        <div class="alerts">
+
+                            <h4 class="heading"> alerts </h4>
+
+                            <div style="width: 100%;">
+                                <h5 class="heading" style="padding: 0.5rem;">
+                                    new alerts<span>[<p>10</p>]</span>
+                                </h5>
+                                <div class="alert-content">
+                                    <div class="alert-body">
+                                        <table>
+                                            <tr>
+                                                <td style="color: rgba(255, 255, 255, 0.548);">deceased customer</td> 
+                                                <td class="alert-details">name<p>name</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: rgba(255, 255, 255, 0.548);">phone</td> 
+                                                <td class="alert-details">name<p>name</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: rgba(255, 255, 255, 0.548);">entry time</td>
+                                                <td class="alert-details">name<p>name</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: rgba(255, 255, 255, 0.548);">exit time</td>
+                                                <td class="alert-details">name<p>name</p></td>
+                                            </tr>
+                                        </table>
+                                        <div class="filter">
+                                            <a href="#">filter customers</a>
+                                        </div>
+                                        <h6 class="new-alert">new</h6>
+                                    </div>
+                                </div>
+                                
+                                <div class="line"></div>
+                                
+                                <h5 class="heading" style="padding: 0.5rem;">
+                                    old alerts
+                                    <button onclick="showOld(this)" style="display: flex; align-items: center; justify-content: center; background: none; cursor: pointer;">
+                                        <span style="padding: 0;" class="material-icons"> expand_more </span>
+                                    </button>
+                                </h5>
+                                <div class="alert-content" id="old-alert" style="display: none;">
+                                    <div class="alert-body">
+                                        <table>
+                                            <tr>
+                                                <td style="color: rgba(255, 255, 255, 0.548);">deceased customer</td> 
+                                                <td class="alert-details">name<p>name</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: rgba(255, 255, 255, 0.548);">phone</td> 
+                                                <td class="alert-details">name<p>name</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: rgba(255, 255, 255, 0.548);">entry time</td>
+                                                <td class="alert-details">name<p>name</p></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color: rgba(255, 255, 255, 0.548);">exit time</td>
+                                                <td class="alert-details">name<p>name</p></td>
+                                            </tr>
+                                        </table>
+                                        <div class="filter">
+                                            <a href="#">filter customers</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        
-                        <div class="card-content">
-                            <h4>total customers</h4>
-                            <h3>6546</h3>
+
+                        <div class="line"></div>
+
+                        <div class="notifications">
+                            <h4 class="heading">notifications <span>[<p>new: 10</p>]</h4>
                         </div>
-                    </div>
-                    <div class="card new_customer">
-                        <div class="card-icon">
-                            <span class="material-icons">group_add</span>
-                        </div>
-                        <div class="card-content">
-                            <h4>new customers</h4>
-                            <h3>646354</h3>
-                        </div>
-                    </div>
-                    <div class="card alert">
-                        <div class="card-icon">
-                            <span class="material-icons">new_releases</span>
-                        </div>
-                        <div class="card-content">
-                            <h4>New Alerts</h4>
-                            <h3>67465</h3>
-                        </div>
-                    </div>
-                    <div class="graph">
-                        <div>
-                            <h5>customers chart</h5>
-                        </div>
-                        <canvas id="myChart"></canvas>
                     </div>
                 </div>
 
@@ -196,5 +242,13 @@
     </section>
 
     <script src="javascript/script.js"></script>
+
+    <script>
+        const oldAlert = document.getElementById('old-alert');
+
+        function showOld(self){
+            oldAlert.style.display = oldAlert.style.display == "none" ? "grid" : "none";
+        }
+    </script>
 </body>
 </html>

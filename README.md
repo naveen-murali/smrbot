@@ -1,2 +1,3 @@
 # smrView
-UI of smrbot project.
+
+### Template for NodeJs Webiste is here.

@@ -1,0 +1,695 @@
+$-body-dark: #343a40;
+$-text-color: #bebebe;
+$-border: 1px solid rgba(151, 151, 151, 0.473);
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    background-color: #343a40;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    position: relative;
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+input[type=submit],
+input[type=checkbox],
+button{
+    cursor: pointer;
+}
+
+// login section.
+section{
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+// section header
+header{
+    h2{
+        padding: 0 0.8rem;
+        font-weight: 300;
+        font-size: 26px;
+        color: #6c757d;
+
+        span{
+            margin-right: -2px;
+            color: rgb(0, 132, 255);
+            font-weight: 900;
+            padding-right: 0.09rem;
+        }
+    }
+}
+// login form head.
+.heading{
+    width: 100%;
+    h4{
+        text-align: center;
+        font-size: 1.2rem;
+        padding-bottom: 1rem;
+        color: $-text-color;
+    }
+}
+// login form div
+.login-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .heading{
+        h4{
+            font-size: 1rem;
+            font-weight: 400;
+        }
+    }
+}
+// login form input divs.
+.login-form-inputs{
+    width: 100%;
+    height: 100%;
+    // height: 2.2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    overflow: hidden;
+
+    label,input{
+        padding: 0.3rem;
+    }
+    
+    label{
+        width: 2.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: $-border;
+        border-radius: 0.2rem 0 0 0.2rem;
+        color: $-text-color;
+        background: rgb(226, 226, 226);
+    }
+
+    input{
+        border: none;
+        outline: none;
+        width: calc(100% - 2.5rem);
+        height: 100%;
+        font-size: 1rem;
+        border-top: $-border;
+        border-bottom: $-border;
+        border-right: $-border;
+        border-radius: 0 0.2rem 0.2rem 0;
+        padding-left: 0.5rem;
+        
+        &::placeholder{
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+    }
+    position: relative;
+}
+// show password div.
+.show-pass{
+    width: 1.7rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border-radius: 0 0.2rem 0.2rem 0;
+}
+// input type password.
+.pass-input{
+    input{
+        padding-right: 2rem;
+    }
+}
+// remember and forgot div.
+.form-rem-forgot{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: $-text-color;
+    font-size: 14px;
+
+    label{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        
+        input{
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.5rem;
+        }
+    }
+    a{
+        color: #1791ba;
+    }
+}
+// submit btn div
+.submit{
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    button{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: $-border;
+        font-size: 14px;
+        border-radius: 0.2rem;
+        padding: 0.3rem 2.5rem;
+        box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.507);
+        border: $-border;
+        color: rgba(255, 255, 255, 0.932);
+        background: #03a4daec;
+        span{
+            padding-left: 0.2rem;
+        }
+        &:active{
+            box-shadow: inset 1px 1px 1px 0 rgba(0, 0, 0, 0.507);
+        }
+    }
+}
+
+// login options.
+.login-with{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.google-sginin-btn{
+    width: 80%;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0.2rem;
+    color: rgb(5, 122, 255);
+    border: 1px solid rgb(5, 122, 255);
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.507);
+    transition: all 0.15s ease-in-out;
+    
+    &:active{
+        box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.507);
+    }
+
+    .google-icon-svg{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 0.5px solid rgba(255, 255, 255, 0.486);
+        padding: 0.4rem;
+        svg{
+            width: 1.5rem;
+        }
+    }
+    .google-signin-text{
+        width: 100%;
+        display: grid;
+        place-items: center;
+        font-size: 14px;
+    }
+
+    &:hover{
+        color: rgba(255, 255, 255, 0.959);
+        background: rgb(5, 122, 255);
+        border: 1px solid rgba(255, 255, 255, 0.486);
+    }
+}
+
+.login-contactus{
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    margin: 1rem 0;
+    border-top: $-border;
+    border-bottom: $-border;
+    font-size: 14px;
+    h4{
+        color: $-text-color;
+        font-weight: 400;
+    }
+    a{
+        padding: 0 0.5rem;
+        color: #1791ba;
+    }
+}
+
+.login-content-text,
+.login-footer{
+    p{
+        color: $-text-color;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    }
+}
+.login-footer{
+    margin-top: 1rem;
+    width: 100%;
+    p{
+        font-size: 12px;
+    }
+}
+
+// error message section.
+.err-msg-container{
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    width: 100%;
+    border: 1px solid red;
+    border-radius: 0.2rem;
+    font-size: 14px;
+    font-weight: 400;
+    color: red;
+    background: rgb(255, 240, 154);
+    text-transform: capitalize;
+    margin-bottom: 0.2rem;
+    transition: all 0.2s ease-in;
+
+    button{
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        display: grid;
+        place-content: center;
+        background: none;
+        border: none;
+        outline: none;
+
+        span{
+            font-size: 16px;
+        }
+    }
+    &.err-msg-container--remove{
+        transform: translateX(120%);
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+// forgot password section.
+.forgot-pass{
+    position: absolute;
+    width: 100vw;
+    min-height: 100%;
+    top: 0px;
+    left: 0px;
+    display: grid;
+    place-content: center;
+    background: #131518ce;
+    transform: scale(0.2);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease-in-out;
+
+    section{
+        position: relative;
+        background: rgba(255, 255, 255, 0.966);
+        min-height: fit-content;
+        border-radius: 0.2rem;
+        border: $-border;
+        box-shadow: 0px 0px 20px 1px #00000057;
+    }
+}
+.forgot-pass.open{
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+.forgot-pass-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: grid;
+    place-content: center;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+// varify identity.
+.varifyIdentity-container{
+    width: 100vw;
+    min-height: 100vh;
+    background: inherit;
+    display: grid;
+    grid-template-areas: "empty" "content";
+}
+.content-btn-container{
+    grid-area: content;
+    min-height: calc(100vh - 4rem);
+    padding: 3rem 1rem 0rem 1rem;
+}
+.blank-section{
+    grid: empty;
+    height: 4rem;
+    background: #212529;
+}
+.form-varify-content-section,
+.varify-content-section{
+    min-height: calc(100vh - 15rem);
+    background: inherit;
+
+    header{
+        padding: 0 0 1.5rem 0;
+        h2{
+            padding: 0;
+        }
+    }
+}
+.varify-content,
+.form-varify-content{
+    h1{
+        color: rgba(255, 255, 255, 0.897);
+        text-transform: capitalize;
+        font-weight: 600;
+        padding: 0 0 1rem 0;
+    }
+    p{
+        color: $-text-color;
+        font-size: 14px;
+        line-height: 1.5rem;
+    }
+}
+.varify-btns{
+    // grid-area: button;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 0.5rem;
+    button,a{
+        text-transform: capitalize;
+    }
+}
+.button-varify{
+    width: 70%;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    border-radius: 0.3rem;
+    color: rgba(255, 255, 255, 0.897);
+    background: linear-gradient(180deg, hsl(110, 95%, 37%) 0%, hsl(106, 96%, 21%) 100%);
+    border: none;
+    box-shadow: 0px 0px 1px 0 black;
+    
+    &:hover{
+        background: linear-gradient(180deg, hsl(110, 95%, 32%) 0%, hsl(106, 98%, 19%) 100%);
+    }
+    &:active{
+        box-shadow: inset 0px 0px 1px 0 black;
+    }
+}
+.button-cancel{
+    color: rgb(5, 122, 255);
+    
+    &:hover{
+        color: rgb(1, 111, 236);
+    }
+    &:active{
+        color: rgb(3, 93, 197);
+    }
+}
+.form-varify-content-section{
+    height: unset;
+    min-height: unset;
+    padding-bottom: 0.5rem;
+}
+
+
+// identity confirmation.
+.info-card{
+    display: flex;
+    width: 20rem;
+    background: rgba(255, 153, 0, 0.308);
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    border: 1px solid rgba(255, 153, 0, 0.925);
+    border-left: 0.3rem solid rgba(255, 153, 0, 0.925);
+    .icon-section{
+        padding: 0 0.5rem;
+        span{
+            color: rgba(56, 34, 1, 0.925);
+        }
+    }
+    p{
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+.varify-form{
+    width: 100%;
+    color: $-text-color;
+    padding-top: 1rem;
+    form{
+        width: 95%;
+        min-height: 28rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+.main-input{
+    padding: 0.5rem 0;
+    display: grid;
+    grid-gap: 0.5rem;
+    padding-left: 0;
+    label{
+        width: 100%;
+        color: rgb(196, 196, 196);
+        font-weight: 400;
+        p{
+            font-size: 14px;
+            color: $-text-color;
+            padding: 0.5rem 0 0 0;
+        }
+        input{
+            width: 100%;
+            padding: 1rem 1rem;
+            outline: none;
+            border: $-border;
+            border-radius: 0.3rem;
+            position: relative;
+            margin: 0.5rem 0;
+        }
+        
+        input[name=username] {
+            background: #ffffff3d;
+            color: #c4c3c3;
+        }
+        a{
+            align-self: end;
+        }
+        div{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+}
+.submit-identity-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    input{
+        width: 70%;
+        padding: 0.5rem;
+        text-align: center;
+        font-weight: 600;
+        border-radius: 0.3rem;
+        color: rgba(255, 255, 255, 0.897);
+        background: linear-gradient(180deg, hsl(110, 95%, 37%) 0%, hsl(106, 96%, 21%) 100%);
+        border: none;
+        box-shadow: 0px 0px 1px 0 black;
+        
+        &:hover{
+            background: linear-gradient(180deg, hsl(110, 95%, 32%) 0%, hsl(106, 98%, 19%) 100%);
+        }
+        &:active{
+            box-shadow: inset 0px 0px 1px 0 black;
+        }
+    }
+    a{
+        margin: 0.5rem 0;
+    }
+}
+
+// account checking
+.acc-div{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.63);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $-text-color;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: inset 0px 0px 2px;
+    border: 1.5px solid rgba(0, 0, 0, 0.801);
+    border-left: 0.3rem solid rgba(0, 0, 0, 0.801);
+}
+.acc-profile-img{
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem;
+    border: $-border;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px 0px black;
+    background: rgb(236, 234, 234);
+    overflow: hidden;
+
+    img{
+        width: 100%;
+    }
+}
+.acc-name{
+    width: calc(100% - 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: rgba(0, 26, 255, 0.747);
+    
+    &:hover{
+        color: rgba(0, 26, 255, 0.815);
+    }
+}
+
+@media screen and (min-width: 425px){
+    section{
+        background: rgba(255, 255, 255, 0.966);
+        width: 25rem;
+        min-height: fit-content;
+        border-radius: 0.2rem;
+        border: $-border;
+        box-shadow: 0px 0px 20px 1px #00000057;
+    }
+}
+@media screen and (min-width: 768px){
+    // varify identity.
+    .varifyIdentity-container{
+        grid-template-areas: "empty content"; 
+    }
+    .blank-section{
+        height: 100vh;
+        height: unset;
+        min-height: unset;
+        width: 25vw;
+    }
+    .content-btn-container{
+        min-height: 100vh;
+        width: calc(100vw - 25vw);
+        padding: 3rem 0rem 0rem 3rem;
+    }
+    .form-varify-content-section,
+    .varify-content-section{
+        width: 68%;
+        height: unset;
+        min-height: unset;
+    }
+    .varify-btns{
+        width: 100%;
+        height: unset;
+        min-height: unset;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-top: 1rem;
+    }
+    .button-varify{
+        width: 15rem;
+        margin-right: 1rem;
+    }
+
+    // identity confirmation.
+    .info-card{
+        width: 25rem;
+    }
+    .varify-form{
+        form{
+            width: 20rem;
+            min-height: unset;
+        }
+    }
+    .main-input{
+        label{
+            input{
+                padding: 0.6rem;
+            }
+        }
+    }
+    .submit-identity-form{
+        flex-direction: row;
+        justify-content: space-between;
+
+        input,a{
+            width: 45%;
+            font-weight: 600;
+        }
+        a{
+            border: $-border;
+            text-align: center;
+            padding: 0.4rem;
+            font-weight: 600;
+            border-radius: 0.3rem;
+            color: rgba(255, 255, 255, 0.897);
+            background: linear-gradient(180deg, hsl(106, 8%, 69%) 0%, hsl(111, 4%, 31%) 100%);
+            box-shadow: 0px 0px 1px 0 black;
+
+            &:hover{
+                color: rgba(255, 255, 255, 0.897);
+                background: linear-gradient(180deg, hsl(102, 4%, 50%) 0%, hsl(105, 4%, 22%) 100%);
+            }
+            &:active{
+                color: rgba(255, 255, 255, 0.897);
+                box-shadow: inset 0px 0px 1px 0 black;
+            }
+        }
+    }
+    .acc-div{
+        flex-direction: row;
+        border-radius: 5rem;
+        background: rgba(255, 102, 0, 0.26);
+        border: 1.5px solid rgba(255, 153, 0, 0.925);
+        border-left: 0.3rem solid rgba(255, 153, 0, 0.925);
+        box-shadow: 0px 0px 3px;
+    }
+}

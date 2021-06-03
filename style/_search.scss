@@ -1,0 +1,211 @@
+.search-body{
+    width: 100%;
+    min-height: calc(100vh - 11.5rem);
+
+    .heading{
+        width: 100%;
+        padding: 0.5rem 1rem;
+        text-transform: capitalize;
+        h3{
+            font-weight: 400;
+            color: $-nav-head-text;
+        }
+    }
+}
+.search-options{
+    min-height: calc(100vh - 16rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    a,
+    button{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        width: 17rem;
+        font-size: 1.2rem;
+        background: $-body-dark;
+        color: $-nav-head-text;
+        padding: 0.7rem 1rem;
+        border-radius: 0.5rem;
+        border: $-border;
+        box-shadow: 1px 1px 3px 0 black;
+        font-weight: 300;
+    }
+
+    a:active,
+    button:active{
+        box-shadow: inset 1px 1px 2px 0 black;
+    }
+}
+
+.search-option-container{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0.5rem 0;
+    form{
+        input{
+            border: 1px solid rgba(255, 255, 255, 0.185);
+            background: $-lit-dark;
+            outline: none;
+        }
+    }
+}
+
+.search-option-content{
+    width: 100%;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+    box-shadow: inset 1px 0px 2px 0 black;
+    background: #181b1e5d;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.search-option-container--show{
+    .search-option-content{
+        overflow: unset;
+        height: unset;
+        opacity: 1;
+        pointer-events: all;
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.search-option-name{
+    form{
+        display: inline-flex;
+        box-shadow: 0 1px 2px 0 black;
+        input,button{
+            outline: none;
+            border: none;
+            padding: 0.5rem 1rem;
+        }
+        input{
+            font-size: 1rem;
+            border-radius: 0.2rem 0 0 0.2rem;
+        }
+        button{
+            width: unset;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0.2rem 0.2rem 0;
+            box-shadow: none;
+        }
+    }
+}
+.search-option-full{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+        justify-content: unset;
+        label{
+            font-weight: 300;
+            color: $-nav-head-text;
+            padding: 0.5rem;
+            font-size: 14px;
+        }
+        input{
+            padding: 0.5rem 1rem;
+            margin-top: 0.2rem;
+            border-radius: 0.2rem;
+            min-width: 14rem;
+            font-size: unset;
+            color: $-nav-head-text;
+        }
+        input::placeholder{
+            text-transform: capitalize;
+        }
+        input[type=submit]{
+            background: $-body-dark;
+            cursor: pointer;
+            box-shadow: 1px 1px 3px 0 black;
+        }
+        input[type=submit]:active{
+            box-shadow: inset 1px 1px 3px 0 black;
+        }
+    }
+}
+.search-option-date{
+    form{
+        display: flex;
+        flex-direction: column;
+        label{
+            padding: 0.5rem 0;
+            font-size: 14px;
+            font-weight: 300;
+            color: $-nav-head-text;
+        }
+        input{
+            color: $-nav-head-text;
+            font-size: unset;
+            min-width: 14rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.2rem;
+            margin-top: 0.2rem;
+        }
+        input[type=submit]{
+            background: $-body-dark;
+            cursor: pointer;
+            box-shadow: 1px 1px 3px 0 black;
+        }
+        input[type=submit]:active{
+            box-shadow: inset 1px 1px 3px 0 black;
+        }
+    }
+}
+.search-option-id{
+    form{
+        display: flex;
+        flex-direction: column;        
+        label{
+            padding: 0.5rem 0;
+            font-size: 14px;
+            font-weight: 300;
+            color: $-nav-head-text;
+        }
+        input{
+            color: $-nav-head-text;
+            font-size: unset;
+            min-width: 16rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.2rem;
+            margin-top: 0.2rem;
+        }
+        input[type=submit]{
+            background: $-body-dark;
+            cursor: pointer;
+            box-shadow: 1px 1px 3px 0 black;
+        }
+        input[type=submit]:active{
+            box-shadow: inset 1px 1px 3px 0 black;
+        }
+    }
+}
+
+@media screen and (max-width: 900px){
+    .search-body{
+        .search-option{
+            width: 100%;
+            padding: 3rem;
+        }
+    }
+}

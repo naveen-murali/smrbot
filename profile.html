@@ -32,7 +32,7 @@
             </div>
 
             <div class="nav-icon profile-icon">
-                <img src="./images/Logo-light.svg" alt="profile image">
+                <img src="https://wallpaperaccess.com/full/254646.jpg" alt="profile image">
             </div>
         </div>
     </nav>
@@ -42,7 +42,7 @@
         <div class="profile">
             <div class="profile-img-name">
                 <div class="profile-img">
-                    <img src="./images/Logo-light.svg" alt="profile-image">
+                    <img src="https://wallpaperaccess.com/full/254646.jpg" alt="profile-image">
                 </div>
                 <h4 class="profile-name">Naveen Murali</h4>
             </div>
@@ -98,7 +98,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/search.html">
+                        <a href="/customer.html">
                             <div>
                                 <span class="material-icons categories-anim">list_alt</span>customers
                             </div>
@@ -148,43 +148,93 @@
                 <!-- path potion -->
                 <div class="content-path">
                     <a href="/index.html"><span class="material-icons">home</span>dashboard</a>
+                    <p>/</p><a href="/profile.html">profile</a>
                 </div>
 
-                <!-- content body -->
-                <div class="dashboad-body">
-                    <div class="card customer">
-                        <div class="card-icon">
-                            <span class="material-icons">group</span>
+                <!-- profile body -->
+                <div class="content-body profile-body display-flex flex-d-c align-i-c">        
+                    <div class="pro-section display-flex flex-d-c align-i-c">
+                        <!-- profile container -->
+                        <div class="pro-img-container">
+                            <img src="https://wallpaperaccess.com/full/254646.jpg" alt="Goku&Vegete">
                         </div>
                         
-                        <div class="card-content">
-                            <h4>total customers</h4>
-                            <h3>6546</h3>
+                        <!-- profile edit and logout -->
+                        <div class="pro-status display-flex justify-c-sb align-i-c">
+                            <button onclick="openProfileEdit()" class="pro-edit"><span class="material-icons">edit</span>edit</button>
+                            <a href="#" class="pro-logout"><span class="material-icons">logout</span>log out</a>
+                        </div>
+
+                        <!-- profile image dividing line -->
+                        <div class="pro-line"></div>
+                        
+                        <!-- profile content -->
+                        <div class="pro-content">
+                            <h3>Naveen Murali A V</h3>
+                            <h5>+918086894243</h5>
+                            <h5>naveenmurali1211@gmail.com</h5>
+                            <p>Attacheri Veedu, Puthur, Ettukudukka p.o, karivellur</p>
                         </div>
                     </div>
-                    <div class="card new_customer">
-                        <div class="card-icon">
-                            <span class="material-icons">group_add</span>
-                        </div>
-                        <div class="card-content">
-                            <h4>new customers</h4>
-                            <h3>646354</h3>
-                        </div>
+                    
+                    <div class="edit-profile">
+                        <form action="#" method="post">
+                            <label for="profileImg">
+                                profile image <br>
+
+                                <img width="48" height="48" 
+                                style="padding: 0.2rem; 
+                                    background: rgb(241, 241, 241); 
+                                    border-radius: 50%; 
+                                    border: 1px solid grey; 
+                                    align-self: center; 
+                                    margin: 0.2rem 0;" 
+                                src="images/Logo-light.svg" alt="preview image" id="previewImg" />
+
+                                <input type="file" name="profileImg" accept="image/*" />
+                            </label>
+                            <label for="name">
+                                name <br>
+                                <input type="text" name="name" value="name"/>
+                            </label>
+                            <label for="phone">
+                                phone <br>
+                                <input type="tel" name="phone" value="000-000-0000"/>
+                            </label>
+                            <label for="email">
+                                email <br>
+                                <input type="email" name="email" value="name@gmail.com"/>
+                            </label>
+                            <label for="address">
+                                address <br>
+                                <textarea name="address" cols="10">Attacheri Veedu, Puthur, Ettukudukka p.o, karivellur</textarea>
+                            </label>
+                            <label for="submit">
+                                <input type="submit" value="edit"/>
+                            </label>
+                            <a href="#" onclick="closeProfileEdit(event)">
+                                <span class="material-icons">close</span>
+                            </a>
+                        </form>
                     </div>
-                    <div class="card alert">
-                        <div class="card-icon">
-                            <span class="material-icons">new_releases</span>
+
+                    <div class="profile-images">
+                        <div class="pro-img">
+                            <h3>Google Image</h3>
+                            <div class="img">
+                                <img src="/images/Logo-light.svg" alt="">
+                            </div>
+                            <a href="/admin/changeProfile">Use This</a>
                         </div>
-                        <div class="card-content">
-                            <h4>New Alerts</h4>
-                            <h3>67465</h3>
+                        <div class="pro-img">
+                            <h3>Uploaded Image</h3>
+                            <div class="img">
+                                <img src="https://wallpaperaccess.com/full/254646.jpg" alt="">
+                            </div>
+                            <a href="/admin/changeProfile">Use This</a>
                         </div>
-                    </div>
-                    <div class="graph">
-                        <div>
-                            <h5>customers chart</h5>
-                        </div>
-                        <canvas id="myChart"></canvas>
+
+                        <button class="profile-cancel">Cancel</button>
                     </div>
                 </div>
 
@@ -196,5 +246,40 @@
     </section>
 
     <script src="javascript/script.js"></script>
+
+    <script>
+        const editProfile = document.querySelector('.edit-profile');
+        const profileImg = document.querySelector('.pro-img-container img');
+        const inputImg = document.querySelector('input[type=file]');
+        const imagePreview = document.querySelector('#previewImg');
+        const proImgSelecter = document.querySelector('.profile-images');
+
+        profileImg.addEventListener('click', (e)=>{
+            proImgSelecter.classList.add('profile-images--active');
+        });
+        
+        document.querySelector('.profile-cancel').addEventListener('click', (e)=>{
+            proImgSelecter.classList.remove('profile-images--active');
+        });
+
+        inputImg.addEventListener('change', (e)=>{
+            imagePreview.setAttribute('src', URL.createObjectURL(e.target.files[0]));
+        });
+
+        function openProfileEdit(){
+            editProfile.classList.add('edit-profile--active');
+        }
+
+        function closeProfileEdit(event){
+            event.preventDefault();
+            editProfile.classList.remove('edit-profile--active');
+        }
+
+        editProfile.addEventListener('click', (e)=>{
+            if (e.target.classList.contains('edit-profile')){
+                editProfile.classList.remove('edit-profile--active');
+            }
+        })
+    </script>
 </body>
 </html>

@@ -1,0 +1,335 @@
+button{
+    border: none;
+}
+
+// customer body.
+.customer-body{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .smsBtn-container,
+    .form{
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-between;
+        padding: 0 1rem 0.5rem 0;
+
+        form{
+            display: inline-flex;
+            justify-content: center;
+        }
+        form:nth-child(2){
+            justify-self: flex-end;
+            box-shadow: 1px 2px 3px $-body-dark;
+        }
+        
+        #customerBtn{
+            margin-left: 1rem;
+            font-weight: 300;
+            font-size: 0.9rem;
+
+            span{
+                font-size: 1rem;
+                color: $-ylw-clr;
+                padding-left: 0.5rem;
+            }
+        }
+
+        input[type=text]{
+            font-size: 0.9rem;
+            padding-left: 0.5rem;
+            border: none;
+            border-top-left-radius: 0.2rem;
+            border-bottom-left-radius: 0.2rem;
+            background: $-lit-dark;
+            border-left: 1px solid rgba(255, 255, 255, 0.301);
+            font-weight: 600;
+            color: $-nav-head-text;
+        }
+        input[type=text]:focus{
+            outline: none;
+        }
+        button{
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-top-right-radius: 0.2rem;
+            border-bottom-right-radius: 0.2rem;
+            padding: 0.4rem 1rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.301);
+            background: rgba(255, 255, 255, 0.548);
+            transition: all 0.2s ease;
+        }        
+        button,
+        input[type=text]{
+            border-top: 1px solid rgba(255, 255, 255, 0.301);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.301);
+        }
+        button:hover{
+            background: rgba(255, 255, 255, 0.377);
+        }
+        button:focus{
+            outline: none;
+        }
+        .smsBtn{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.301);
+            border-radius: 0.3rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            background: $-body-dark;
+            color: $-nav-head-text;
+            box-shadow: 1px 2px 3px $-body-dark;
+            text-shadow: 0px 1px 1px $-body-dark;
+            transition: all 0.2s ease;
+            span{
+                padding-right: 0.2rem;
+            }
+        }
+        .smsBtn:hover{
+            background: #181b1ea2;
+        }
+        .smsBtn:active{
+            background: $-body-dark;
+            box-shadow: none;
+        }
+    }
+
+    .smsBtn-container{
+        padding-left: 1rem;
+
+        h4{
+            border: 1px solid rgba(255, 255, 255, 0.301);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.3rem;
+            background: $-slide-dark;
+            color: $-text-clr;
+            font-weight: 300;
+            font-size: 0.9rem;
+            box-shadow: 1px 2px 3px $-body-dark;
+            span{
+                padding: 0 0 0 0.5rem;
+                font-size: 1.08rem;
+                color: $-ylw-clr;
+            }
+        }
+    }
+
+    .table-div{
+        overflow: hidden;
+        overflow-x: auto;
+        box-shadow: 1px 2px 3px $-body-dark;
+    }
+    .table-div::-webkit-scrollbar{
+        display: unset;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        text-transform: capitalize;
+        background: $-slide-dark;
+        color: $-nav-head-text;
+    }
+    td, th{
+        border: 1px solid rgba(255, 255, 255, 0.301);
+        padding: 0.5rem 1rem;
+    }
+    thead{
+        color: rgba(0, 132, 255, 0.774);
+        font-size: 0.95rem;
+        border-bottom: 1.7px solid rgba(255, 255, 255, 0.301);
+        background: $-body-dark;
+    }
+    tbody {
+        font-size: 0.9rem;
+        tr:hover{
+            background: #191c1f;
+            cursor: pointer;
+        }
+    }
+    .txt-left{
+        text-align: left;
+    }
+    .txt-center{
+        text-align: center;
+        h3,
+        button,
+        a{
+            border-radius: 0.2rem;
+            background: $-red-clr;
+            padding: 0.3rem 0.8rem;
+            color: white;
+            text-shadow: 1px 1.5px 2px rgba(0, 0, 0, 0.185);
+            font-weight: 600;
+            transition: all 0.15s ease;
+        }
+        button:hover,
+        a:hover{
+            background: rgb(255, 29, 29);
+        }
+        button:active,
+        a:active{
+            background: $-red-clr;
+        }
+    }
+
+    .tName{
+        min-width: 5rem;
+    }
+    .tPhone{
+        min-width: 10rem;
+    }
+    .tTime{
+        min-width: 26rem;
+    }
+    .tOption{
+        min-width: 6rem;
+        text-align: center;
+
+        h3,.sms--warning{
+            display: none;
+        }
+        button,
+        a{
+            display: inline-flex;
+        }
+
+        &.SMS--sending{
+            h3{
+                background: $-blue-clr;
+                text-shadow: 1px 1.5px 2px rgba(0, 0, 0, 0.185);
+                font-weight: 600;
+                display: grid;
+                align-content: center;
+
+                .sms--done {
+                    display: none;
+                }
+                .sms--loading{
+                    animation: smsSnding 2s ease infinite;
+                }
+        
+            }
+            button{
+                display: none;
+            }
+        }
+        &.SMS--successful{
+            h3{
+                background: rgb(38, 194, 38);
+                text-shadow: 1px 1.5px 2px rgba(0, 0, 0, 0.185);
+                font-weight: 600;
+                display: grid;
+                align-content: center;
+
+                .sms--loading {
+                    display: none;
+                    animation: none;
+                }
+            }
+            button{
+                display: none;
+            }
+        }
+        &.SMS--error{
+            position: relative;
+            .sms--warning{
+                display: grid;
+                align-content: center;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                border-radius: 0.1rem;
+                padding: 0.2rem;
+                color: red;
+                background: black;
+                span{ 
+                    animation: categories_anim ease 1.5s infinite;
+                }
+            }
+        }
+    }
+}
+@keyframes smsSnding{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.checkbox{
+    width: 1.2rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.2rem;
+    border: 1px solid $-text-clr;
+    background: $-nav-head-text;
+    span{   
+        font-size: 1rem;
+        font-weight: 600;
+        color: rgb(247, 247, 247);
+    }
+}
+.checkbox.checkbox--active{
+    background: $-blue-clr;
+}
+
+
+// search
+.nameForm,
+.searchNameForm{
+    position: relative;
+}
+.autocomplete ul{
+    position: absolute;
+    top: 2.5rem;
+    left: 0px;
+    border: $-border;
+    border-radius: 0.2rem;
+    width: 100%;
+    max-height: 12rem;
+    color: $-nav-head-text;
+    background: $-body-dark;
+    box-shadow: 0px 2px 4px 0px #000000;
+    overflow: hidden;
+    overflow-y: scroll;
+    list-style-type: none;
+
+    li{
+        padding: 0.5rem;
+        cursor: pointer;
+        &:hover{
+            background: $-lit-dark;
+        }
+    }
+}
+
+
+@media screen and (max-width: 900px){
+    .customer-body{
+        .tOption{
+            min-width: 11rem;
+        }
+        .form,
+        .smsBtn-container{
+            padding-left: 0;
+            padding-right: 0;
+
+            #customerBtn{
+                margin: 0;
+            }
+        }
+    }
+}

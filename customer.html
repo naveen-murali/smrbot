@@ -148,43 +148,43 @@
                 <!-- path potion -->
                 <div class="content-path">
                     <a href="/index.html"><span class="material-icons">home</span>dashboard</a>
+                    <p>/</p><a href="/search.html">customers search</a>
+                    <p>/</p><a href="/customer.html">customers</a>
                 </div>
 
                 <!-- content body -->
-                <div class="dashboad-body">
-                    <div class="card customer">
-                        <div class="card-icon">
-                            <span class="material-icons">group</span>
-                        </div>
-                        
-                        <div class="card-content">
-                            <h4>total customers</h4>
-                            <h3>6546</h3>
-                        </div>
+                <div class="content-body customer-body">
+                    <!-- search bar -->
+                    <div class="form">
+                        <form action="#">
+                            <input id="customersList" type="text" name="deseasedCustomers" hidden />                        
+                            <button class="smsBtn" id="customerBtn">
+                                Send Warning: <span>0</span>
+                            </button>
+                        </form>
+                        <form action="#" method="GET" autocomplete="off" class="searchNameForm">
+                            <input type="text" name="name" placeholder="Search For Name" id="searchName">
+                            <input type="text" name="id" id="searchId" hidden>
+                            <div class="autocomplete"></div>
+                            <button type="submit">
+                                <span class="material-icons">search</span>
+                            </button>
+                        </form>
                     </div>
-                    <div class="card new_customer">
-                        <div class="card-icon">
-                            <span class="material-icons">group_add</span>
-                        </div>
-                        <div class="card-content">
-                            <h4>new customers</h4>
-                            <h3>646354</h3>
-                        </div>
-                    </div>
-                    <div class="card alert">
-                        <div class="card-icon">
-                            <span class="material-icons">new_releases</span>
-                        </div>
-                        <div class="card-content">
-                            <h4>New Alerts</h4>
-                            <h3>67465</h3>
-                        </div>
-                    </div>
-                    <div class="graph">
-                        <div>
-                            <h5>customers chart</h5>
-                        </div>
-                        <canvas id="myChart"></canvas>
+
+                    <div class="table-div">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="txt-left tName">name</th>
+                                    <th class="txt-left tPhone">phone no.</th>
+                                    <th class="txt-left tTime">visited time</th>
+                                    <th>option</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -195,6 +195,8 @@
         </div>
     </section>
 
-    <script src="javascript/script.js"></script>
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/local-search.js"></script>
+    <!-- <script src="/javascript/autocomplete-search.js"></script> -->
 </body>
 </html>

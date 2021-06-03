@@ -1,0 +1,114 @@
+@import "variable";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    background: $-body-dark;
+    display: grid;
+    place-content: center;
+    padding: 2rem 1rem;
+    overflow-x: hidden;
+}
+
+section{
+    width: 25rem;
+    height: fit-content;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.904);
+    border: $-border;
+    color: rgba(0, 0, 0, 0.849);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+
+    h4{
+        text-transform: capitalize;
+        font-weight: 300;
+    }
+    h5{
+        font-weight: 600;
+    }
+    h4,h5{
+        text-align: center;
+        padding: 0.2rem;
+    }
+}
+.status-btns,
+.info{
+    width: 100%;
+}
+
+.status-btns{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+
+    a{
+        text-transform: capitalize;
+        text-decoration: none;
+        padding: 0.4rem 1.5rem;
+        border-radius: 0.2rem;
+        font-weight: 400;
+    }
+    a:nth-child(1){
+        color: grey;
+        border: 2px solid grey;
+
+        &:hover{
+            background: grey;
+            color: rgba(255, 255, 255, 0.904);
+        }
+    }
+    a:nth-child(2){
+        color: rgba(255, 0, 0, 0.89);
+        border: 2px solid rgba(255, 0, 0, 0.89);
+        
+        &:hover{
+            background: rgba(255, 0, 0, 0.89);
+            color: rgba(255, 255, 255, 0.904);
+        }
+    }
+}
+
+.status{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 175, 0);
+    
+    span{
+        font-size: 50px;
+    }
+    h3{
+        text-transform: capitalize;
+    }
+    &.error{
+        color: red;
+    }
+
+    .div{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        a{
+            color: blue;
+            text-transform: capitalize;
+            text-decoration: none;
+        }
+        a:nth-child(1){
+            color: grey;
+        }
+    }
+}

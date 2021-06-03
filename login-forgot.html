@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/login.css">
+</head>
+
+<body>
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 0.2rem;
+            height: 0.2rem;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #f1f1f100;
+        border-radius: 10px;
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #ffffff42; 
+        border-radius: 10px;
+        transition: all 0.25s ease-in;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #ffffff25; 
+        }
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+    </style>
+
+    <section>
+        <header>
+            <h2><span>SMR</span>BoT</h2>
+        </header>
+
+        <div class="login-with">
+            <div class="heading">
+                <h4>Is this your account?</h4>
+            </div>
+            <div class="acc-div">
+                <div class="acc-profile-img">
+                    <img src="./images/Logo-light.svg" alt="">
+                </div>
+                <div class="acc-name">
+                    <a href="#">naveenmurali1211@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="err-msg-container">
+            <p><i>varification error occured. please try again</i></p>
+            <button>
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <div class="err-msg-container">
+            <p><i>varification error occured. please try again</i></p>
+            <button>
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+
+        <!-- <form action="#" method="post" class="login-form">
+            <div class="heading">
+                <h4><strong>Enter Confirm Code</strong></h4>
+            </div>
+
+            <div class="login-form-inputs pass-input">
+                <label for="phone-otp">
+                    <span class="material-icons">keyboard</span>
+                </label>
+
+                <input type="number" name="phone-otp" placeholder="OTP from phone" />
+
+                <a href="#" class="show-pass">
+                    <sapn class="material-icons">visibility</sapn>
+                </a>
+            </div>
+
+            <div class="login-form-inputs pass-input">
+                <label for="email-otp">
+                    <span class="material-icons">keyboard</span>
+                </label>
+
+                <input type="number" name="email-otp" placeholder="OTP from email" />
+
+                <a href="#" class="show-pass">
+                    <sapn class="material-icons">visibility</sapn>
+                </a>
+            </div>
+
+            <label for="submit" class="submit">
+                <button type="submit">
+                    SignIn
+                    <span class="material-icons">login</span>
+                </button>
+            </label>
+        </form> -->
+
+        <div class="login-contactus">
+            <h4>Any Problems?</h4>
+            <a href="#">Contact Us</a>
+        </div>
+
+        <footer class="login-footer">
+            <p>Copyright © 2021 <b>SMR</b>BoT by Naveen Murali</p>
+        </footer>
+    </section>
+
+    <script>
+        //password input.
+        const passIns = document.querySelectorAll(".pass-input input[type=password]");
+
+        //show password btn.
+        const showBtns = document.querySelectorAll(".show-pass");
+        
+        //hiding show password btn.
+        showBtns.forEach((showBtn, index)=>{
+            //showing password or hiding.
+            showBtn.style.display = "none";
+
+            showBtn.addEventListener("click", (e)=>{
+                e.preventDefault();
+                passIns[index].type = passIns[index].type == "password" ? "text" : "password";
+            });
+        })
+
+        // removing the error msg.
+        const errMsgs = document.querySelectorAll('.err-msg-container');
+        errMsgs.forEach((msg)=>{
+            let removeBtn = msg.querySelector('button');
+            
+            removeBtn.addEventListener('click', (req, res)=>{
+                msg.classList.add('err-msg-container--remove');
+                setTimeout(()=> msg.style.display = 'none', 230);
+            });
+        });
+
+        //adding show password btn.
+        passIns.forEach((passIn, index)=>{
+            passIn.addEventListener("input", (e)=>{
+                showBtns[index].style.display = e.target.value ? "flex" : "none";
+            });
+        });
+    </script>
+</body>
+
+</html>

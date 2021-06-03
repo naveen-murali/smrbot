@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/login.css">
+</head>
+
+<body>
+    <section>
+        <header>
+            <h2><span>SMR</span>BoT</h2>
+        </header>
+        <div class="login-with">
+            <div class="heading">
+                <h4>Sign-In</h4>
+            </div>
+            <a href="#" class="google-sginin-btn">
+                <div class="google-icon-svg">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" class="svg-inline--fa fa-google fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>
+                </div>
+                <div class="google-signin-text">
+                    Sign in with Google
+                </div>
+            </a>
+        </div>
+        
+        <div class="err-msg-container">
+            <p><i>varification error occured. please try again</i></p>
+            <button>
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <div class="err-msg-container">
+            <p><i>varification error occured. please try again</i></p>
+            <button>
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+
+        <form action="#" method="post" class="login-form">
+            <div class="heading">
+                <h4> or </h4>
+            </div>
+            <div class="login-form-inputs">
+                <label for="email">
+                    <span class="material-icons">mail_outline</span>
+                </label>
+                <input type="email" name="email" placeholder="email" />
+            </div>
+            <div class="login-form-inputs pass-input">
+                <label for="pass">
+                    <span class="material-icons">lock_outline</span>
+                </label>
+                <input type="password" name="pass" placeholder="password" />
+                <a href="#" class="show-pass">
+                    <sapn class="material-icons">visibility</sapn>
+                </a>
+            </div>
+            <div class="form-rem-forgot">
+                <label for="remember" class="form-rem">
+                    <input type="checkbox" name="remember" />
+                    Remember
+                </label>
+                <a href="#" class="forgot-btn">Forgot Password?</a>
+            </div>
+            <label for="submit" class="submit">
+                <button type="submit">
+                    SignIn
+                    <span class="material-icons">login</span>
+                </button>
+            </label>
+        </form>
+        <div class="login-contactus">
+            <h4>Any Problems?</h4>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="login-content-text">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Dolorem sapiente illum obcaecati unde cum alias assumenda eos animi, 
+                temporibus molestiae dignissimos debitis consequatur id aut praesentium nisi accusamus quos possimus.
+            </p>
+        </div>
+        <footer class="login-footer">
+            <p>Copyright © 2021 <b>SMR</b>BoT by Naveen Murali</p>
+        </footer>
+    </section>
+
+    <div class="forgot-pass">
+        <section>
+            <header>
+                <h2><span>SMR</span>BoT</h2>
+            </header>
+            <form action="#" method="post" class="login-form">
+                <div style="
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    font-size: 14px;
+                    color: #6c757d;
+                    padding-bottom: 0.5rem;
+                ">
+                    <h4 style="align-self: center; font-weight: 600; padding: 1rem 0;">Forgot Passsword</h4>
+                    <p>Enter email address below to reset your password.</p>
+                </div>
+                <div class="login-form-inputs">
+                    <label for="email">
+                        <span class="material-icons">mail_outline</span>
+                    </label>
+                    <input type="email" name="email" placeholder="email" />
+                </div>
+                <label for="submit" class="submit">
+                    <button type="submit">
+                        Reset Password
+                    </button>
+                </label>
+            </form>
+
+            <button class="forgot-pass-close">
+                <span class="material-icons">close</span>
+            </button>
+        </section>
+    </div>
+
+    <script>
+        //password input.
+        const passIn = document.querySelector(".pass-input input");
+        
+        //show password btn.
+        const showBtn = document.querySelector(".show-pass");
+        
+        //hiding show password btn.
+        showBtn.style.display = "none";
+        
+        //showing password or hiding.
+        showBtn.addEventListener("click", (e)=>{
+            e.preventDefault();
+            passIn.type = passIn.type == "password" ? "text" : "password";
+        });
+        
+        //adding show password btn.
+        passIn.addEventListener("input", (e)=>{
+            showBtn.style.display = e.target.value ? "flex" : "none";
+        });
+
+        const forgotPass = document.querySelector(".forgot-pass");
+        const forgotBtn = document.querySelector(".forgot-btn");
+        const forgotCloseBtn = document.querySelector(".forgot-pass-close");
+        
+        // removing forgot pass
+        forgotPass.addEventListener("click", (e)=>{
+            if(e.target.classList.contains("forgot-pass")){
+                forgotPass.classList.remove("open");
+            }
+        });
+
+        forgotBtn.addEventListener("click", (e)=>{
+            e.defaultPrevented;
+            forgotPass.classList.add("open");
+        });
+
+        forgotCloseBtn.addEventListener("click", (e)=>{
+            forgotPass.classList.remove("open");
+        });
+
+        // removing the error msg.
+        const errMsgs = document.querySelectorAll('.err-msg-container');
+        errMsgs.forEach((msg)=>{
+            let removeBtn = msg.querySelector('button');
+            
+            removeBtn.addEventListener('click', (req, res)=>{
+                msg.classList.add('err-msg-container--remove');
+                setTimeout(()=> msg.style.display = 'none', 230);
+            });
+        });
+    </script>
+</body>
+
+</html>

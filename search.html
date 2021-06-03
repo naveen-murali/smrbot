@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <link rel="stylesheet" href="/style/styles.css">
+
+    <title>SMR BOT</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav>
+        <div class="burger-btn">
+            <i class="material-icons">menu</i>
+        </div>
+        <a href="/">
+            <h2><span>SMR</span>BOT</h2>
+        </a>
+        <div class="nav-icons">
+            <div class="nav-icon">
+                <span class="material-icons">notifications_none</span>
+                <p class="notification-num">3</p>
+            </div>
+
+            <div class="nav-icon profile-icon">
+                <img src="./images/Logo-light.svg" alt="profile image">
+            </div>
+        </div>
+    </nav>
+
+    <!-- profile section -->
+    <section class="profile-section">
+        <div class="profile">
+            <div class="profile-img-name">
+                <div class="profile-img">
+                    <img src="./images/Logo-light.svg" alt="profile-image">
+                </div>
+                <h4 class="profile-name">Naveen Murali</h4>
+            </div>
+            <div class="profile-status-out">
+                <h4>
+                    <div></div>online
+                </h4>
+                <a href="#">Log-Out</a>
+            </div>
+        </div>
+
+        <div class="profile-details">
+            <h4>My Profile</h4>
+            <table>
+                <tr>
+                    <td class="profile-title">name</td>
+                    <td>:</td>
+                    <td>naveen murali</td>
+                </tr>
+                <tr>
+                    <td class="profile-title">first name</td>
+                    <td>:</td>
+                    <td>naveen</td>
+                </tr>
+                <tr>
+                    <td class="profile-title">last name</td>
+                    <td>:</td>
+                    <td>murali</td>
+                </tr>
+                <tr>
+                    <td class="profile-title">email</td>
+                    <td>:</td>
+                    <td style="text-transform: unset;">naveenmurali1211@gmail.com</td>
+                </tr>
+            </table>
+            <a href="#">view profile</a>
+        </div>
+    </section>
+
+    <!-- content section -->
+    <section class="content-container">
+        <div class="content-wraper">
+            <!-- slide bar section -->
+            <div class="slide-bar">
+                <ul>
+                    <li class="categories-head">
+                        <h4>categories</h4>
+                    </li>
+                    <li>
+                        <a href="/index.html">
+                            <div>
+                                <span class="material-icons categories-anim">dashboard</span>dashboard
+                            </div>
+                            <div>
+                                <span class="material-icons">keyboard_arrow_right</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/search.html">
+                            <div>
+                                <span class="material-icons categories-anim">list_alt</span>customers
+                            </div>
+                            <div>
+                                <span class="material-icons">keyboard_arrow_right</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div>
+                                <span class="material-icons categories-anim">notifications_none</span>notifications
+                            </div>
+                            <div>
+                                <span class="material-icons">keyboard_arrow_right</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div>
+                                <span class="material-icons categories-anim">info</span>about us
+                            </div>
+                            <div>
+                                <span class="material-icons">keyboard_arrow_right</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="categories-head" style="padding-top: 1rem;">
+                        <h4>about you</h4>
+                    </li>
+                    <li>
+                        <a href="/profile.html">
+                            <div>
+                                <span class="material-icons categories-anim">perm_identity</span>profile
+                            </div>
+                            <div>
+                                <span class="material-icons">keyboard_arrow_right</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- content potion -->
+            <div class="content-section">
+                <!-- path potion -->
+                <div class="content-path">
+                    <a href="/index.html"><span class="material-icons">home</span>dashboard</a>
+                    <p>/</p><a href="/search.html">customers search</a>
+                </div>
+
+                <!-- content body -->
+                <div class="content-body search-body">
+                    <div class="heading">
+                        <h3>searching options</h3>
+                    </div>
+                    <div class="search-options">
+                        <div class="search-option-container">
+                            <a href="/customer.html">Show All</a>
+                        </div>
+                        <div class="search-option-container" id="search-name">
+                            <button>Show By Name</button>
+                            <div class="search-option-content search-option-name">
+                                <form action="#" method="GET" autocomplete="off" class="searchNameForm">
+                                    <input type="text" name="name" placeholder="Search For Name" id="searchName">
+                                    <input type="text" name="id" id="searchId" hidden>
+                                    <div class="autocomplete"></div>
+                                    <button type="submit">
+                                        <span class="material-icons">search</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="search-option-container" id="search-id">
+                            <button>Search By Special Key</button>
+                            <div class="search-option-content search-option-id">
+                                <form action="#" method="GET">
+                                    <label for="place">
+                                        Special Key: <br>
+                                        <input type="text" name="place" placeholder="Eg: 507f191e810c19729de860ea" />
+                                    </label>
+                                    <label for="submit">
+                                        <input type="submit" value="Submit">
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="search-option-container" id="search-full">
+                            <button>Search By Full Details</button>
+                            <div class="search-option-content search-option-full">
+                                <form action="#" method="GET" autocomplete="off">
+                                    <label for="name">
+                                        Name: <br>
+                                        <input type="text" name="name" placeholder="Eg: bob" />
+                                    </label>
+                                    <label for="phone">
+                                        Phone Number: <br>
+                                        <input type="tel" name="phone" placeholder="Eg: +916666666666" />
+                                    </label>
+                                    <label for="place">
+                                        Place: <br>
+                                        <input type="text" name="place" placeholder="Eg: " />
+                                    </label>
+                                    <label for="submit">
+                                        <input type="submit" value="Submit">
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="search-option-container" id="search-date">
+                            <button>Search By Date</button>
+                            <div class="search-option-content search-option-date">
+                                <form action="#" method="GET">
+                                    <label for="date">
+                                        Date: <br>
+                                        <input type="date" name="date" />
+                                    </label>
+                                    <label for="submit">
+                                        <input type="submit" value="Submit" />
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer>
+                    <h4>Created By <span>Naveen Murali</span> | &#169 2020 All rights reserved.</h4>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+    <script src="javascript/search.js"></script>
+    <script src="javascript/script.js"></script>
+    <script src="javascript/customer-search.js"></script>
+    <table border="0" cellspacing="0" cellpadding="0" style="max-width:600px">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td align="left"><img width="92" height="32"
+                                        src="https://ci4.googleusercontent.com/proxy/2Aq8EEZmur-HMDuHJac8keX3JRh-9ErM47lWIV3YoWn3QXPh0iftgqzcV1V6YC9G0-VCfMKXocE6LfU0aybfJzQukHYc-PEOK7BSzcLfCA1yPmIxyLaCEXbWsKyafaASD2LIdcFL=s0-d-e1-ft#https://ssl.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_188x64dp.png"
+                                        style="display:block;width:92px;height:32px" class="CToWUd"></td>
+                                <td align="right"><img width="32" height="32"
+                                        style="display:block;width:32px;height:32px"
+                                        src="https://ci3.googleusercontent.com/proxy/12rTzUTfWWCBJcvBcXJwQVKJIoKWWntqD08OrTXdjt7fq1-LLHD4oI_HQpgdZC1Gx7dX6vqHiGVE_VTOkZWq_yGhaViaMBlMd9o=s0-d-e1-ft#https://ssl.gstatic.com/accountalerts/email/keyhole.png"
+                                        class="CToWUd"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr height="16"></tr>
+            <tr>
+                <td>
+                    <table bgcolor="#4184F3" width="100%" border="0" cellspacing="0" cellpadding="0"
+                        style="min-width:332px;max-width:600px;border:1px solid #e0e0e0;border-bottom:0;border-top-left-radius:3px;border-top-right-radius:3px">
+                        <tbody>
+                            <tr>
+                                <td height="72px" colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <td width="32px"></td>
+                                <td
+                                    style="font-family:Roboto-Regular,Helvetica,Arial,sans-serif;font-size:24px;color:#ffffff;line-height:1.25">
+                                    Google Verification Code</td>
+                                <td width="32px"></td>
+                            </tr>
+                            <tr>
+                                <td height="18px" colspan="3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table bgcolor="#FAFAFA" width="100%" border="0" cellspacing="0" cellpadding="0"
+                        style="min-width:332px;max-width:600px;border:1px solid #f0f0f0;border-bottom:1px solid #c0c0c0;border-top:0;border-bottom-left-radius:3px;border-bottom-right-radius:3px">
+                        <tbody>
+                            <tr height="16px">
+                                <td width="32px" rowspan="3"></td>
+                                <td></td>
+                                <td width="32px" rowspan="3"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Hi Naveen,</p>
+                                    <p>We received a request to access your Google Account <span style="color:#659cef"
+                                            dir="ltr"><a href="mailto:naveenav0001@gmail.com"
+                                                rel="noreferrer noreferrer"
+                                                target="_blank">naveenav0001@gmail.com</a></span> through your email
+                                        address. Your Google verification code is:</p>
+                                    <div style="text-align:center">
+                                        <p dir="ltr"><strong
+                                                style="text-align:center;font-size:24px;font-weight:bold">661268</strong>
+                                        </p>
+                                    </div>
+                                    <p>If you did not request this code, it is possible that someone else is trying to
+                                        access the Google Account <span style="color:#659cef" dir="ltr"><a
+                                                href="mailto:naveenav0001@gmail.com" rel="noreferrer noreferrer"
+                                                target="_blank">naveenav0001@gmail.com</a></span>. <strong>Do not
+                                            forward or give this code to anyone.</strong></p>
+                                    <p>You received this message because this email address is listed as the recovery
+                                        email for the Google Account <span style="color:#659cef"><a
+                                                href="mailto:naveenav0001@gmail.com" rel="noreferrer noreferrer"
+                                                target="_blank">naveenav0001@gmail.com</a></span>. If that is incorrect,
+                                        please click <a
+                                            href="https://accounts.google.com/AccountDisavow?adt=AOX8kirWPDAig5N0Y8nAGpFRKhWZmVH6NK295mqWVq8DpNH7zoATeKgG-x387WgwbJJhJ4tcjQ"
+                                            rel="noreferrer noreferrer" target="_blank"
+                                            data-saferedirecturl="https://www.google.com/url?q=https://accounts.google.com/AccountDisavow?adt%3DAOX8kirWPDAig5N0Y8nAGpFRKhWZmVH6NK295mqWVq8DpNH7zoATeKgG-x387WgwbJJhJ4tcjQ&amp;source=gmail&amp;ust=1621421062558000&amp;usg=AFQjCNExhqcDz0AnC0lfOTzdGFsvYDBI5A">here</a>
+                                        to remove your email address from that Google Account.</p>
+                                    <p>Sincerely yours,</p>
+                                    <p>The Google Accounts team</p>
+                                </td>
+                            </tr>
+                            <tr height="32px"></tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr height="16"></tr>
+            <tr>
+                <td
+                    style="max-width:600px;font-family:Roboto-Regular,Helvetica,Arial,sans-serif;font-size:10px;color:#bcbcbc;line-height:1.5">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table
+                                        style="font-family:Roboto-Regular,Helvetica,Arial,sans-serif;font-size:10px;color:#666666;line-height:18px;padding-bottom:10px">
+                                        <tbody>
+                                            <tr>
+                                                <td>This email can't receive replies. For more information, visit the <a
+                                                        href="https://support.google.com/accounts/troubleshooter/2402620?ref_topic=2364467"
+                                                        style="text-decoration:none;color:#4d90fe"
+                                                        rel="noreferrer noreferrer" target="_blank"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://support.google.com/accounts/troubleshooter/2402620?ref_topic%3D2364467&amp;source=gmail&amp;ust=1621421062558000&amp;usg=AFQjCNG82NcCRkwhx2SGJtg3mGa45V-YNw">Google
+                                                        Accounts Help Centre</a>.<br>© Google Inc., 1600 Amphitheatre
+                                                    Parkway, Mountain View, CA 94043, USA</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
