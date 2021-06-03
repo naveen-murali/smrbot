@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMR BOT</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/style/style.css">
+    <link rel="stylesheet" href="static/style/keyboard.css">
+</head>
+
+<body class="light">
+    <!-- main section -->
+    <main>
+        <div class="logo">
+            <img src="static/images/Logo-light.svg" alt="">
+        </div>
+
+        <h1 class="txt">Registration Form</h1>
+
+        <form action="#" id="reg-form" autocomplete="off">
+            <input type="text" name="name" class="inpt txt" placeholder="name" />
+            <input type="number" name="phone" class="inpt txt" placeholder="mobile-no" />
+            <input type="text" name="place" class="inpt txt" placeholder="place" />
+
+            <button type="submit" class="btn txt submit">
+                <i class="material-icons">arrow_circle_up</i>
+                submit
+            </button>
+        </form>
+
+        <p class="txt contact">
+            Contact Us<br />
+            <span>+918086894243</span>
+        </p>
+    </main>
+
+    <!-- section front -->
+    <section class="front-section">
+        <div class="front-img-div">
+            <img class="front-img" src="static/images/scan_temp.jpg" alt="Take Sanitizer" />
+            <img class="front-img-arrow" src="static/images/arrow.svg" alt="Arrow Logo" type="img/svg" />
+            <h1 class="front-text txt"><i class="material-icons">warning</i><br> Your temerature reading has some variation, pleace visit a doctor or retry after letter!</h1>
+        </div>
+    </section>
+
+    <!-- loading section -->
+    <section class="loading-section">
+        <div class="loading-div">
+            <img src="static/images/Logo-light.svg" alt="">
+        </div>
+    </section>
+
+    <!-- status section -->
+    <section class="status-section">
+        <div class="status-screen success">
+            <h1 class="txt">registration successfull</h1>
+            <h4 class="txt">welcome naveen murali</h4>
+        </div>
+    </section>
+
+    <!-- qr-code section -->
+    <section class="qr-section">
+        <canvas id="qr-code"></canvas>
+    </section>
+
+    <!-- keyboard section -->
+    <section class="keyboard">
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">q</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">w</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">e</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">r</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">t</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">y</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">u</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">i</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">o</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">p</button>
+        <br />
+        <button class="keyboard_key keyboard_key--wide" id="capLock"><i class="material-icons">keyboard_capslock</i>
+            <div class="keyboard_key--cap-indcate"></div>
+        </button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">a</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">s</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">d</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">f</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">g</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">h</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">j</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">k</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">l</button>
+        <button onclick="input_enter()" class="keyboard_key keyboard_key--wide"><i
+                class="material-icons">keyboard_return</i></button>
+        <br />
+        <button class="keyboard_key keyboard_key--wide keyboard_key--dark keyboard--done"><i
+                class="material-icons">check_circle</i></button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">z</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">x</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">c</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">v</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">b</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">n</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">m</button>
+        <button onclick="input_key(this, 'keyboard')" class="keyboard_key txt">.</button>
+        <button onclick="input_backspace('keyboard')" class="keyboard_key keyboard_key--wide"><i
+                class="material-icons">backspace</i></button>
+        <br />
+        <button onclick="input_space()" class="keyboard_key keyboard__key--extra-wide"><i
+                class="material-icons">space_bar</i></button>
+    </section>
+
+    <!-- number keyboard section -->
+    <section class="num_keyboard">
+        <button onclick="input_key(this, 'num_keyboard')" class="keyboard_key">1</button>
+        <button onclick="input_key(this, 'num_keyboard')" class="keyboard_key">2</button>
+        <button onclick="input_key(this, 'num_keyboard')" class="keyboard_key">3</button>
+        <br />
+        <button onclick="input_key(this, 'num_keyboard')" class="keyboard_key">4</button>
+        <button onclick="input_key(this, 'num_keyboard')" class="keyboard_key">5</button>
+        <button onclick="input_key(this, 'num_keyboard')" class="keyboard_key">6</button>
+        <br />
+        <button onclick="input_key(this, 'num_keyboard')" class="keyboard_key">7</button>
+        <button onclick="input_key(this, 'num_keyboard')" class="keyboard_key">8</button>
+        <button onclick="input_key(this, 'num_keyboard')" class="keyboard_key">9</button>
+        <br />
+        <button class="keyboard_key keyboard_key--dark num_keyboard--done"><i
+                class="material-icons">check_circle</i></button>
+        <button onclick="input_key(this, 'num_keyboard')" class="keyboard_key ">0</button>
+        <button onclick="input_backspace('num_keyboard')" class="keyboard_key"><i
+                class="material-icons">backspace</i></button>
+    </section>
+
+    <script src="static/js/qrious.min.js"></script>
+    <script src="static/js/script.js"></script>
+    <script src="static/js/keyboard_js.js"></script>
+</body>
+</html>

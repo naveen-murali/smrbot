@@ -1,0 +1,370 @@
+$-bg-clr: #ebecf0;
+$-bg-clr-op: #ebecf0a1;
+$-text-clr: #babecc;
+
+
+//todo: UNIVERSAL PART
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='input'] {
+  -moz-appearance: textfield;
+}
+.btn{
+    color: #61677c;
+    box-shadow: -5px -5px 20px #fff, 5px 5px 10px $-text-clr;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn:hover {
+    box-shadow: -2px -2px 5px #fff, 2px 2px 5px $-text-clr, inset -1px -1px 2px #fff;
+}
+.btn:active {
+    box-shadow: inset 1px 1px 2px $-text-clr, inset -1px -1px 2px #fff;
+}
+
+//todo: body part.
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $-bg-clr;
+}
+
+// todo: MAIN FORM PART----------------------------------------------------
+main{
+    width: 100vw;
+    height: fit-content;
+    padding: 1rem 0.8rem;
+    text-align: center;
+    .logo{
+        img{
+            width: 15%;
+            border: 10px solid $-bg-clr;
+            border-radius: 50%;
+            // box-shadow: -5px -5px 20px #fff, 5px 5px 20px #a5a5a5;
+            box-shadow: -5px -5px 20px #fff, 5px 5px 20px #a5a5a5, inset 0.125rem 0.125rem 0.312rem $-text-clr, inset -0.312rem -0.312rem 0.62rem #fff;    
+        }
+    }
+    h1{
+        font-weight: 700;
+        text-align: center;
+        color: $-text-clr;
+        padding-bottom: 1.56rem;
+        text-shadow: 1px 1px 1px #fff;
+    }
+}
+.main-form{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    button,
+    input{
+        border: 0;
+        outline: 0;
+        font-size: 1rem;
+        border-radius: 20rem;
+        padding: 1rem;
+        background-color: $-bg-clr;
+        text-shadow: 1px 1px 0 #fff;
+    }
+    
+    label{
+        display: block;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        input{
+            width: 100%;
+            letter-spacing: 0.5px;
+            box-shadow: inset 0.125rem 0.125rem 0.312rem $-text-clr, inset -0.312rem -0.312rem 0.62rem #fff;
+            transition: all 0.2s ease-in-out;
+            appearance: none;
+        }
+        input:focus {
+            box-shadow: inset 1px 1px 2px $-text-clr, inset -1px -1px 2px #fff;
+        }
+    }
+    .submit{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #ae1100;
+        border-radius: 20rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+        svg{
+            width: 1rem;
+        }
+    }
+
+}
+.contact{
+    color: $-text-clr;
+    text-shadow: 1px 1px 1px #fff;
+    text-align: center;
+    margin-top: 1.25rem;
+    font-weight: 800;
+    font-size: 1rem;
+    span{
+        font-size: 14px;
+    }
+}
+.media {
+    padding: 1.7rem 0;
+    text-align: center;
+
+    .icons {
+        border-radius: 0.5rem;
+        line-height: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0.5rem;
+        font-size: 1.2rem;
+        padding: 1rem;
+        border: none;
+        outline: 0;
+    }
+}
+// todo: MAIN FORM PART----------------------------------------------------
+
+// todo: LOADING SECTION--------------------------------------------------------
+.loading-section{
+    z-index: -2;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $-bg-clr-op;
+}
+.loading-div{
+    width: 4rem;
+    height: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: $-bg-clr;
+    border: 7px solid $-bg-clr;
+    box-shadow: -5px -5px 20px #fff, 5px 5px 10px $-text-clr, inset 0.125rem 0.125rem 0.312rem $-text-clr;
+    // transform: translateY(-80vh);
+    opacity: 0;
+    transform: scale(0.2);
+    transition: all 0.2s ease-in;
+
+    img{
+        width: 80%;
+    }
+}
+.loading-section.loading-section-active{
+    z-index: 6;
+}
+.loading-div.loading-div-active{
+    // transform: translateY(0vh);
+    opacity: 1;
+    transform: scale(1);
+    img{
+        animation: loading 2s ease infinite;
+        transform-origin: center;
+        transform-box: fill-box;
+    }
+}
+@keyframes loading{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+// todo: LOADING SECTION--------------------------------------------------------
+
+// todo: QR SECTION--------------------------------------------------------
+.qr-section{
+    z-index: 5;
+    position:fixed;
+    top: 1rem;
+    left: -80%;
+    width: 80%;
+    height: fit-content;
+    text-align: center;
+    padding: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: -5px -5px 20px #fff, 5px 5px 10px $-text-clr;
+    background-color: $-bg-clr;
+    transition: all 0.25s ease-in;
+
+    canvas{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        width: 10rem;
+        height: 10rem;
+        // border-radius: 1rem;
+        box-shadow: inset 0.125rem 0.125rem 0.312rem $-text-clr, inset -0.312rem -0.312rem 0.62rem #fff;
+    }
+    div{
+        height: 2rem;
+        width: 3rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 0.8rem;
+        position: absolute;
+        top: 0;
+        right: -3rem;
+        cursor: pointer;
+        // border-left: 2px solid  $-bg-clr;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background-color: $-bg-clr;
+        box-shadow: 12px -5px 20px #fff, 8px 6px 10px 0 #babecc;
+        color: #ae1100;
+    }
+    button{
+        border: none;
+        color: #ae1100;
+        border-radius: 20rem;
+        padding: 0.5rem 2rem;
+    }
+    button:focus{
+        outline: none;
+    }
+}
+.qr-section.qr-section-active{
+    left: 0;
+}
+// todo: QR SECTION--------------------------------------------------------
+
+// todo: STATUS SECTION--------------------------------------------------------
+.status-section{
+    z-index: -2;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $-bg-clr-op;
+}
+.status-section.status-section-active{
+    z-index: 6;
+}
+.status-screen{
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: -5px -5px 20px #fff, 5px 5px 10px $-text-clr;
+    background: $-bg-clr;
+    transition: all 0.25s ease-in;
+
+    h1, h4{
+        text-transform: capitalize;
+        text-shadow: 1px 1px 1px #fff;
+    }
+    h1{
+        font-weight: 700;
+        padding-bottom: 0.5rem;
+    }
+    h4{
+        color: #adb0bb;
+    }
+}
+.status-screen.status-screen-active{
+    transform: translate(-50%, -50%) scale(1);
+}
+.status-screen.success{
+    h1{
+        color: rgb(0, 131, 0);
+    }
+}
+.status-screen.failed{
+    h1{
+        color: #db1600;
+    }
+}
+// todo: STATUS SECTION--------------------------------------------------------
+
+@media screen and (min-width: 481px) {
+    main{
+        width: 75%;
+    }
+    .qr-section{
+        width: 40%;
+        left: -40%;
+    }
+}
+@media screen and (min-width: 769px) {
+    main{
+        width: 60%;
+    }
+    .qr-section{
+        width: 30%;
+        left: -30%;
+    }
+}
+@media screen and (min-width: 1025px) {
+    main{
+        width: 50%;
+    }
+    .contact{
+        span{
+            font-size: 12px;
+        }
+    }
+    .qr-section{
+        width: fit-content;
+        border-radius: 1rem;
+        left: 6%;
+        box-shadow: none;
+        
+        canvas{  
+            box-shadow: -5px -5px 20px #fff, 5px 5px 10px $-text-clr;
+        }
+        div{
+            display: none;
+        }
+    }
+    .status-screen{
+        width: 35%;
+    }
+}
+@media screen and (min-width: 1201px) {
+    main{
+        width: 32%;
+    }
+    .contact{
+        span{
+            font-size: 12px;
+        }
+    }
+    .qr-section{
+        left: 12%;
+    }
+}
