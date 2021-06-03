@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <link rel="stylesheet" type="text/css" href="/style/styles.css" />
+    <title>{{mainTitle}}</title>
+</head>
+
+<body>
+
+    {{> _navbar}}
+
+    {{!-- content section --}}
+    <section class="content-container">
+        <div class="content-wraper">
+
+            {{> _sidebar}}
+
+            {{!-- content potion --}}
+            <div class="content-section">
+
+                {{!-- path potion --}}
+                <div class="content-path">
+                    <a href="/"><span class="material-icons">home</span>dashboard</a>
+                    {{#each path}}
+                        <p>/</p><a href={{this.path}}>{{this.viewTitle}}</a>
+                    {{/each}}
+                </div>
+
+                {{{body}}}
+                {{> _footer}}
+
+            </div>
+        </div>
+    </section>
+
+    <script src="/javascript/script.js"></script>
+</body>
+</html>

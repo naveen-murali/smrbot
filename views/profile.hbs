@@ -1,0 +1,221 @@
+<style>
+    .changePassForm{
+        background: rgba(247, 247, 247, 0.041);
+        border-radius: 0.2rem;             
+        display: none;
+        flex-direction: column;
+        padding: 0.5rem;
+        border: 1px solid gray;
+        margin: 1rem 0;
+    }
+    .changePassForm input{
+        padding: 0.5rem;
+        margin: 0.2rem;
+        outline: none;
+        border: 1px solid gray;
+        border-radius: 0.2rem;
+    }
+    .changePassForm input[type=submit]{
+        align-self: center;
+        cursor: pointer;
+        background: #181b1e;
+        border: 1px solid #30363b;
+        color: rgba(255, 255, 255, 0.918);
+        box-shadow: 0 0 2px black;
+    }
+    .changePassForm input[type=submit]:active{
+        box-shadow: inset 0 0 2px black;
+    }
+    .changePass{
+        color: rgb(0, 89, 255);
+        transition: all 0.2s ease;
+    }
+    .changePass:hover{
+        color: rgba(255, 255, 255, 0.849);
+    }
+</style>
+
+<!-- profile body -->
+<div class="content-body profile-body display-flex flex-d-c align-i-c">
+    <div class="pro-section display-flex flex-d-c align-i-c">
+        <!-- profile container -->
+        <div class="pro-img-container">
+        {{#if profile.profileImg}}
+            <img src="{{profile.profileImg}}" alt="profile image" style="cursor: pointer;">
+        {{else}}
+            <img src="/images/Logo-light.svg" alt="profile image">
+        {{/if}}
+        </div>
+
+        <!-- profile edit and logout -->
+        <div class="pro-status display-flex justify-c-sb align-i-c">
+            <button onclick="openProfileEdit()" class="pro-edit"><span class="material-icons">edit</span>edit</button>
+            <a href="/admin/logout" class="pro-logout"><span class="material-icons">logout</span>log out</a>
+        </div>
+
+        <!-- profile image dividing line -->
+        <div class="pro-line"></div>
+
+        <!-- profile content -->
+        <div class="pro-content">
+            <h3>{{profile.name}}</h3>
+            <h5>+91{{profile.phone}}</h5>
+            <h5>{{profile.email}}</h5>
+            <h5 style="text-transform: capitalize;">{{profile.city}}, {{profile.district}}</h5>
+            <p>{{profile.address}}</p>
+        </div>
+
+        {{!-- change password --}}
+        <button style="
+            background: rgba(255, 255, 255, 0);
+            cursor: pointer;
+            margin: 0.5rem 0; 
+            border: 1px solid rgb(0, 89, 255); 
+            padding: 0.5rem; border-radius: 0.2rem;" class="changePass" onclick="showChangeForm()">
+            Change Password
+        </button>
+        <div>
+            <form action="/admin/login/changePass" method="POST" class="changePassForm">
+                <input type="text" name="currentPasssword" placeholder="Current Passsword">
+                <input type="text" name="newPassword" placeholder="Password">
+                <input type="text" name="cPassword" placeholder="Confirm Password">
+                <input type="submit" value="Change Password">
+            </form>
+        </div>
+        <div>
+            {{#each sucess_msg}}
+            <h4 style="color: rgba(255, 255, 255, 0.658); font-weight: 300; font-size: 14px; border-radius: 0.2rem; 
+                border: 1px solid yellowgreen; background: rgba(153, 205, 50, 0.274); padding: 0.5rem 1rem;
+                border-left: 3px solid yellowgreen;" id="successPass">
+                {{this}}
+            </h4>
+            {{/each}}
+
+            {{#each error_msg}}
+            <h4 style="color: rgba(255, 255, 255, 0.658); font-weight: 300; font-size: 14px; border-radius: 0.2rem;
+                border: 1px solid red; background: rgba(255, 0, 0, 0.274); padding: 0.5rem 1rem;
+                border-left: 3px solid red;" id="failedPass">
+                {{this}}
+            </h4>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="edit-profile">
+        <form action="/admin/editProfile" method="post" enctype="multipart/form-data">
+            <label for="profileImg">
+                profile image <br>
+
+                <img width="48" height="48" 
+                    style="padding: 0.2rem; 
+                        background: rgb(241, 241, 241); 
+                        border-radius: 50%; 
+                        border: 1px solid grey; 
+                        align-self: center; 
+                        margin: 0.2rem 0;" 
+                    src="{{profile.profileImg}}" alt="preview image" id="previewImg" />
+
+                <input type="file" name="profileImg" value="{{profile.profileImg}}" accept="image/*" />
+            </label>
+
+            <label for="name">
+                name <br>
+                <input type="text" name="name" value="{{profile.name}}"/>
+            </label>
+
+            <label for="phone">
+                phone <br>
+                <input type="tel" name="phone" value="{{profile.phone}}"/>
+            </label>
+
+            <label for="email">
+                email <br>
+                <input type="email" name="email" value="{{profile.email}}"/>
+            </label>
+
+            <label for="address">
+                address <br>
+                <textarea name="address" cols="10">{{profile.address}}</textarea>
+            </label>
+
+            <label for="submit">
+                <input type="submit" value="edit"/>
+            </label>
+
+            <a href="#" onclick="closeProfileEdit(event)">
+                <span class="material-icons">close</span>
+            </a>
+        </form>
+    </div>
+
+    <div class="profile-images">
+        <div class="pro-img">
+            <h3>Google Image</h3>
+            <div class="img">
+                <img src="{{profile.googleImg}}" alt="">
+            </div>
+            <a href="/admin/changeProfileGoogle">Use This</a>
+        </div>
+
+        <div class="pro-img">
+            <h3>Uploaded Image</h3>
+            <div class="img">
+                <img src="{{profile.localImg}}" alt="">
+            </div>
+            <a href="/admin/changeProfileLocal">Use This</a>
+        </div>
+        
+        <button class="profile-cancel">Cancel</button>
+    </div>
+</div>
+
+<script>
+    const editProfile = document.querySelector('.edit-profile');  
+    const profileImg = document.querySelector('.pro-img-container img');      
+    const inputImg = document.querySelector('input[type=file]');
+    const imagePreview = document.querySelector('#previewImg');
+    const proImgSelecter = document.querySelector('.profile-images');
+    const changeForm = document.querySelector("div .changePassForm");
+    const successPass = document.querySelector("#successPass");
+    const failedPass = document.querySelector("#failedPass");
+
+    if(successPass)
+        setTimeout(()=>{
+            successPass.style.display = "none";
+        }, 10000);
+
+    if(failedPass)
+        setTimeout(()=>{
+            failedPass.style.display = "none";
+        }, 10000);
+
+    changeForm.style.display = "none";
+    function showChangeForm(){
+        changeForm.style.display = changeForm.style.display == "none" ? "flex" : "none";
+    }
+
+    profileImg.addEventListener('click', (e)=>{
+        proImgSelecter.classList.add('profile-images--active');
+    });
+        
+    document.querySelector('.profile-cancel').addEventListener('click', (e)=>{
+        proImgSelecter.classList.remove('profile-images--active');
+    });
+
+    inputImg.addEventListener('change', (e)=>{
+        imagePreview.setAttribute('src', URL.createObjectURL(e.target.files[0]));
+    });
+
+    function openProfileEdit(){
+        editProfile.classList.add('edit-profile--active');
+    };
+    function closeProfileEdit(event){
+        event.preventDefault();
+        editProfile.classList.remove('edit-profile--active');
+    };
+    editProfile.addEventListener('click', (e)=>{
+        if (e.target.classList.contains('edit-profile')){
+            editProfile.classList.remove('edit-profile--active');
+        }
+    });
+</script>

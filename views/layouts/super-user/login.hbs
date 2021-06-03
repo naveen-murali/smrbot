@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMR BoT | SuperUser - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Favicons -->
+    {{!-- <link rel="apple-touch-icon" href="/images/Logo.jpg" sizes="180x180" />
+    <link rel="icon" href="/images/Logo.jpg" sizes="32x32" type="image/png" /> --}}
+    <link rel="icon" href="/images/Logo.jpg" sizes="16x16" type="image/png" />
+    {{!-- <link rel="manifest" href="/images/Logo.jpg" />
+    <link rel="mask-icon" href="/images/Logo.jpg" color="#7952b3" />
+    <link rel="icon" href="/images/Logo.jpg" /> --}}
+    <meta name="theme-color" content="#7952b3" />
+</head>
+<body class="text-center">
+    <style>
+        *{
+            font-family: "Open-Sans", sans-serif;
+        }
+    </style>
+
+    {{{body}}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $('#navbarNav .navbar-nav a').on('click', function () {
+            $('#navbarNav .navbar-nav').find('li.active').removeClass('active');
+            $(this).parent('li').addClass('active');
+        });
+    </script>
+</body>
+
+</html>

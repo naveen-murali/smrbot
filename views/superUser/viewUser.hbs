@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 d-flex flex-column align-items-center justify-content-center">
+            {{> superUser/_error}}
+
+            <div class="col-md-12 text-center mb-3 d-flex align-itmes-center justify-content-evenly">
+            {{#if view}}
+                <a href="/superUser/editUser/{{admin._id}}" class="btn btn-primary m-1">Edit Admin</a>
+            {{/if}}
+                <a href="#" onclick="confirmDelete(event, '/superUser/removeUser/{{admin._id}}', '{{admin.name}}')" class="btn btn-link m-1">Delete</a>
+            </div>
+
+            <div class="alert alert-info shadow-sm rounded col-md-6 col-12" role="alert">
+                <div style="width: 6rem; height: 6rem; border-radius: 50%; padding: 0.5rem; overflow: hidden;"
+                    class="bg-light d-flex align-items-center justify-content-center">
+                    <img src="{{#if admin.profileImg}}{{admin.profileImg}}{{else}}/images/Logo-light.svg{{/if}}" style="width: 100%;" alt="">
+                </div>
+                <form action="/superUser/editUser/{{admin._id}}" method="POST" autocomplete="off">
+
+                    <div class="form-row row pt-3 text-primary">
+                        <div class="form-group col-md-6">
+                            <label for="inputText1">Name</label>
+                            <input type="text" name="name" class="form-control" id="inputText1" placeholder="Name" value="{{admin.name}}" {{#if view}}disabled{{/if}}>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="telPassword1">Phone Number</label>
+                            <input type="tel" name="phone" class="form-control" id="telPassword1" placeholder="Phone" value="{{formatPhone admin.phone}}" {{#if view}}disabled{{/if}}>
+                        </div>
+                    </div>
+
+                    <div class="form-row row pt-3 text-primary">
+                        <div class="form-group col-md-12">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email" value="{{admin.email}}" {{#if view}}disabled{{/if}}>
+                        </div>
+                    </div>
+
+                    <div class="form-group pt-3 text-primary">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St" value="{{admin.address}}" {{#if view}}disabled{{/if}}>
+                    </div>
+
+                    <div class="form-row row pt-3 text-primary">
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">City</label>
+                            <input type="text" name="city" class="form-control" id="inputCity" value="{{captalize admin.city}}" {{#if view}}disabled{{/if}}>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">District</label>
+                            <select id="inputState" name="district" class="form-control" {{#if view}}disabled{{/if}}>
+                                <option selected>{{captalize admin.district}}</option>
+                                {{#each district}}
+                                    <option>{{this}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" name="zip" class="form-control" id="inputZip" value="{{admin.zip}}" {{#if view}}disabled{{/if}}>
+                        </div>
+                    </div>
+
+                    {{#if view}}{{else}}
+                    <button type="submit" class="btn btn-primary mt-3">Edit</button>
+                    {{/if}}
+                </form>
+            </div>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+
+{{#each error_msg}}
+<div class="err-msg-container">
+    <p><i>{{this}}</i></p>
+    <button>
+        <span class="material-icons">close</span>
+    </button>
+</div>
+{{/each}}
+
+{{#each sucess_msg}}
+<div class="err-msg-container" style="color:rgb(248, 248, 248); background: rgba(0, 207, 0, 0.445); border-color: rgba(0, 207, 0);">
+    <p><i>{{this}}</i></p>
+    <button>
+        <span class="material-icons">close</span>
+    </button>
+</div>
+{{/each}}

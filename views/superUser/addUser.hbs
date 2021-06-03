@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8 text-primary">
+            {{> superUser/_error}}
+
+            <form action="/superUser/addUser" method="POST" autocomplete="off">
+                <div class="form-row row pt-3">
+                    <div class="form-group col-md-6">
+                        <label for="inputText1">Name</label>
+                        <input type="text" name="name" class="form-control" id="inputText1" placeholder="Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="telPassword1">Phone Number</label>
+                        <input type="tel" name="phone" class="form-control" id="telPassword1" placeholder="Phone">
+                    </div>
+                </div>
+
+                <div class="form-row row pt-3">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword1">Password</label>
+                        <input type="text" value="{{pass}}" class="form-control" id="inputPassword1" placeholder="Password" disabled>
+                        <input type="text" name="password" value="{{pass}}" class="form-control" hidden>
+                    </div>
+                </div>
+
+                <div class="form-group pt-3">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+
+                <div class="form-row row pt-3">
+                    <div class="form-group col-md-6">
+                        <label for="inputCity">City</label>
+                        <input type="text" name="city" class="form-control" id="inputCity" placeholder="City">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">District</label>
+                        <select id="inputState" name="district" class="form-control">
+                            <option selected>Choose...</option>
+                            {{#each district}}
+                                <option>{{this}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip</label>
+                        <input type="text" name="zip" class="form-control" id="inputZip" placeholder="Zip">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-4">Create</button>
+            </form>
+        </div>
+        
+        <div class="col-md-2"></div>
+    </div>
+</div>

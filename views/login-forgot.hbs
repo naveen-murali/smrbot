@@ -1,0 +1,161 @@
+<style>
+    /* width */
+    ::-webkit-scrollbar {
+        width: 0.2rem;
+        height: 0.2rem;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f100;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #ffffff42;
+        border-radius: 10px;
+        transition: all 0.25s ease-in;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #ffffff25;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+
+<section>
+    <header>
+        <h2><span>SMR</span>BoT</h2>
+    </header>
+    {{#if forgotAcc}}{{#each forgotAcc}}    
+        <div class="login-with">
+            <div class="heading">
+                <h4>Is this your account?</h4>
+            </div>
+            <div class="acc-div">
+                <div class="acc-profile-img">
+                    <img src="{{this.profileImg}}" alt="{{this.email}}">
+                </div>
+                <div class="acc-name">
+                    <a href="/admin/login/confirm-account/{{this._id}}">
+                        {{this.email}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    {{/each}}{{/if}}
+
+    {{> _login-error}}
+
+    {{#if form}}
+        <form action="{{form.action}}" method="{{form.method}}" class="login-form">
+            <div class="heading">
+                <h4><strong>Enter Confirm Code</strong></h4>
+            </div>
+            <div class="login-form-inputs pass-input">
+                <label for="{{form.input_1.name}}">
+                    <span class="material-icons">{{form.input_1.icon}}</span>
+                </label>
+                <input type="{{form.input_1.type}}" name="{{form.input_1.name}}" placeholder="{{form.input_1.placeholder}}" />
+                <a href="#" class="show-pass">
+                    <sapn class="material-icons">visibility</sapn>
+                </a>
+            </div>
+            <div class="login-form-inputs pass-input">
+                <label for="{{form.input_2.name}}">
+                    <span class="material-icons">{{form.input_2.icon}}</span>
+                </label>
+                <input type="{{form.input_2.type}}" name="{{form.input_2.name}}" placeholder="{{form.input_2.placeholder}}" />
+                <a href="#" class="show-pass">
+                    <sapn class="material-icons">visibility</sapn>
+                </a>
+            </div>
+            <label for="submit" class="submit">
+                <button type="submit">
+                    {{form.submit.value}}
+                    <span class="material-icons">{{form.submit.icon}}</span>
+                </button>
+            </label>
+        </form>
+    {{/if}}
+
+    <div class="login-contactus">
+        <h4>Any Problems?</h4>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <footer class="login-footer">
+        <p>Copyright © 2021 <b>SMR</b>BoT by Naveen Murali</p>
+    </footer>
+</section>
+
+<script>
+    //password input.
+    const passIns = document.querySelectorAll(".pass-input input[type=password]");
+
+    // confirm password.
+    const cPassIn = document.querySelector("input[name=cPassword]");
+    if(cPassIn){
+        let subBtn = document.querySelector('button[type=submit]');
+            subBtn.style.background = 'not-allowed';
+            subBtn.style.background = 'grey';
+            subBtn.style.pointerEvents = 'none';
+
+        cPassIn.addEventListener('input', (e) => {
+            if(!(passIns[0].value === cPassIn.value)){            
+                subBtn.style.background = 'not-allowed';
+                subBtn.style.background = 'grey';
+                subBtn.style.pointerEvents = 'none';
+                return cPassIn.style.border = '1px solid red';
+            }
+            subBtn.style.pointerEvents = 'all';
+            subBtn.style.background = '#03a4daec';
+            cPassIn.style.border = '1px solid rgba(151, 151, 151, 0.473)';
+        });
+    }
+
+    //show password btn.
+    const showBtns = document.querySelectorAll(".show-pass");
+
+    //hiding show password btn.
+    showBtns.forEach((showBtn, index) => {
+        //showing password or hiding.
+        showBtn.style.display = "none";
+
+        showBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            passIns[index].type = passIns[index].type == "password" ? "text" : "password";
+        });
+    })
+
+    // removing the error msg.
+    const errMsgs = document.querySelectorAll('.err-msg-container');
+    errMsgs.forEach((msg) => {
+        let removeBtn = msg.querySelector('button');
+
+        removeBtn.addEventListener('click', (req, res) => {
+            msg.classList.add('err-msg-container--remove');
+            setTimeout(() => msg.style.display = 'none', 230);
+        });
+    });
+
+    //adding show password btn.
+    passIns.forEach((passIn, index) => {
+        passIn.addEventListener("input", (e) => {
+            showBtns[index].style.display = e.target.value ? "flex" : "none";
+        });
+    });
+</script>

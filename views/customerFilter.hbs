@@ -1,0 +1,50 @@
+<!-- content body -->
+<div class="content-body customer-body">
+    <!-- sms button and total customer counts -->
+    <div class="smsBtn-container">
+        <h4>Total Customers: <span>{{customers_length}}</span></h4>
+        <a href="#" class="smsBtn" data-ids="{{#each customers}}{{this._id}},{{/each}}">
+            <span class="material-icons">sms</span>
+            Send Warning
+        </a>
+    </div>
+
+    <div class="table-div" data-userId="{{profile._id}}">
+        <table>
+            <thead>
+                <tr>
+                    <th class="txt-left tName">name</th>
+                    <th class="txt-left tPhone">phone no.</th>
+                    <th class="txt-left tTime">visited time</th>
+                    <th class="txt-left tName">place</th>
+                    <th>SMS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each customers}}
+                <tr>
+                    <td class="tName">{{this.name}}</td>
+                    <td class="tPhone">{{this.phone}}</td>
+                    <td class="tTime">
+                        entry time : {{this.entryTime}} <br>
+                        exit time : {{this.exitTime}}
+                    </td>
+                    <td class="tName">{{this.place}}</td>
+                    <td id="option-{{this._id}}" class="txt-center tOption {{#if smsStatus}}SMS--successful{{/if}}">
+                        <button id="sndWrngBtn-{{this._id}}" onclick="sendSMS('{{this._id}}')">Send Warning</button>
+                        <h3>
+                            <span class="material-icons sms--loading">refresh</span>
+                            <span class="material-icons sms--done">check_circle</span>
+                        </h3>
+                        
+                        <div class="sms--warning">
+                            <span class="material-icons">warning</span>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="/javascript/customer-filter-script.js"></script>

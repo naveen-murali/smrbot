@@ -1,0 +1,39 @@
+<!-- content body -->
+<div class="dashboad-body">
+    <div class="card customer">
+        <div class="card-icon">
+            <span class="material-icons">group</span>
+        </div>
+        
+        <div class="card-content">
+            <h4>total customers</h4>
+            <h3>{{total_customer}}</h3>
+        </div>
+    </div>
+    <div class="card new_customer">
+        <div class="card-icon">
+            <span class="material-icons">group_add</span>
+        </div>
+        <div class="card-content">
+            <h4>new customers</h4>
+            <h3>{{new_customer}}</h3>
+        </div>
+    </div>
+    <div class="card alert">
+        <div class="card-icon">
+            <span class="material-icons">new_releases</span>
+        </div>
+        <div class="card-content">
+            <h4>New Alerts</h4>
+            <h3>{{new_alerts_count}}</h3>
+        </div>
+    </div>
+    <div class="graph">
+        <div>
+            <h5>customers chart</h5>
+        </div>
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+<script src="/javascript/chartGet.js"></script>

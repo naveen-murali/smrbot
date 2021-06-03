@@ -1,0 +1,38 @@
+{{!-- customer to send alert --}}
+<section>
+    {{#if info}}
+    <div class="info">
+        <h4>{{customer.name}}</h4>
+        <h5>{{customer.phone}}</h5>
+        <h4>{{customer.place}}</h4>
+    </div>
+    <div class="status-btns">
+        <a href="/customersWarning/{{ids}}">cancel</a>
+        <a href="/customersWarning/sendWarning/{{userId}}/{{customer._id}}">send alert</a>
+    </div>
+    {{/if}}
+
+    {{#if success}}
+    <div class="status">
+        <span class="material-icons">
+            check_circle_outline
+        </span>
+        <h3>seccess</h3>
+    </div>
+    {{/if}}
+
+    {{#if error}}
+    <div class="status error">
+        <span class="material-icons">
+            error_outline
+        </span>
+        <h3>error</h3>
+        {{#if noBtns}}{{else}}
+        <div class="div">
+            <a href="/customersWarning/{{userId}}{{customerId}}">cancel</a>
+            <a href="/customersWarning/sendWarning/{{userId}}/{{customerId}}">retry</a>
+        </div>
+        {{/if}}
+    </div>
+    {{/if}}
+</section>

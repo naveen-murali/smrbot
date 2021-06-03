@@ -1,0 +1,86 @@
+{{!-- navbar --}}
+<nav>
+    <div class="burger-btn">
+        <i class="material-icons">menu</i>
+    </div>
+    
+    <a href="/admin"><h2><span>SMR</span>BoT</h2></a>
+
+    <div class="nav-icons">
+        <div class="nav-icon">
+            <span class="material-icons">notifications_none</span>
+            {{#if new_alerts_count}}
+            <p class="notification-num">{{new_alerts_count}}</p>
+            {{/if}}
+        </div>
+        <div class="nav-icon profile-icon">
+            {{#if profile.profileImg}}
+                <img src={{profile.profileImg}} alt="profile image">
+            {{else}}
+                <img src='/images/Logo-light.svg' alt="profile image">
+            {{/if}}
+        </div>
+    </div>
+</nav>
+
+{{!-- profile section --}}
+<section class="profile-section">
+    <div class="profile">
+        <div class="profile-img-name">
+            <div class="profile-img">
+                {{#if profile.profileImg}}
+                    <img src={{profile.profileImg}} alt="profile image">
+                {{else}}
+                    <img src='/images/Logo-light.svg' alt="profile image">
+                {{/if}}
+            </div>
+            <h4 class="profile-name">{{profile.name}}</h4>
+        </div>
+        <div class="profile-status-out">
+            <h4><div></div>online</h4>
+            <a href="/admin/logout">Log-Out</a>
+        </div>
+    </div>
+
+    <div class="profile-details">
+        <h4>My Profile</h4>
+        <table>
+            <tr>
+                <td class="profile-title">name</td>
+                <td>:</td>
+                <td>{{profile.name}}</td>
+            </tr>
+            <tr>
+                <td class="profile-title">email</td>
+                <td>:</td>
+                <td style="text-transform: unset;">{{profile.email}}</td>
+            </tr>
+            <tr>
+                <td class="profile-title">address</td>
+                <td>:</td>
+                <td>{{profile.address}}</td>
+            </tr>
+            <tr>
+                <td class="profile-title">city</td>
+                <td>:</td>
+                <td>{{profile.city}}</td>
+            </tr>
+            <tr>
+                <td class="profile-title">state</td>
+                <td>:</td>
+                <td>{{profile.district}}</td>
+            </tr>
+            <tr>
+                <td class="profile-title">phone</td>
+                <td>:</td>
+                <td>+91{{profile.phone}}</td>
+            </tr>
+            <tr>
+                <td class="profile-title">ZIP</td>
+                <td>:</td>
+                <td>{{profile.zip}}</td>
+            </tr>
+        </table>
+        <a href="/admin/profile">view profile</a>
+    </div>
+</section>

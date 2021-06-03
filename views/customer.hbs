@@ -1,0 +1,63 @@
+<!-- content body -->
+<div class="content-body customer-body">
+    <!-- search bar -->
+    <div class="form">
+        <form action="/admin/customers/manyCustomerFilter" method="POST">
+            <input id="customersList" type="text" name="deceasedCustomers" hidden />                        
+            <button class="smsBtn" id="customerBtn">
+                Send Warning: <span>0</span>
+            </button>
+        </form>
+        {{#if autocomplete}}
+        <form action="#" method="GET" autocomplete="off" class="searchNameForm">
+            <input type="text" name="name" placeholder="Search For Name" id="searchName">
+            <input type="text" name="id" id="searchId" hidden>
+            <div class="autocomplete"></div>
+            <button type="submit">
+                <span class="material-icons">search</span>
+            </button>
+        </form>
+        {{/if}}
+    </div>
+    
+    <div class="table-div">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="txt-left tName">name</th>
+                    <th class="txt-left tPhone">phone no.</th>
+                    <th class="txt-left tTime">visited time</th>
+                    <th class="txt-left tName">place</th>
+                    <th>option</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            {{#each customers}}
+                <tr>
+                    <td>
+                        <div data-id={{this._id}} class="checkbox">
+                            <span class="material-icons">check</span>
+                        </div>
+                    </td>
+                    <td class="tName">{{this.name}}</td>
+                    <td class="tPhone">{{this.phone}}</td>
+                    <td class="tTime">
+                        entry time : {{this.entryTime}} 
+                        <br>
+                        exit time : {{this.exitTime}}
+                    </td>
+                    <td class="tPlace">{{this.place}}</td>
+                    <td class="txt-center tOption">
+                        <a href="/admin/customers/oneCustomerFilter/{{this._id}}">filter</a>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+{{#if autocomplete}}
+    <script src="/javascript/autocomplete-search.js"></script>
+    <script src="/javascript/customer-script.js"></script>
+{{/if}}

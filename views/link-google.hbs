@@ -1,0 +1,88 @@
+<div class="varifyIdentity-container">
+    <div class="blank-section"></div>
+
+    <div class="content-btn-container" id="firstIdentityContent">
+        <div class="varify-content-section">
+            <header>
+                <h2><span>SMR</span>BOT</h2>
+            </header>
+            <div class="varify-content">
+                <h1>link google accout</h1>
+                <p>By linking your Google account, we will switch your authentication method for accessing your SMR
+                    BoT account from email address to Log in with Google.</p>
+            </div>
+        </div>
+
+        <div class="varify-btns">
+            <button class="button-varify">link my account</button>
+            <a href="/admin/login" class="button-cancel">cancel, return to login </a>
+        </div>
+    </div>
+
+    <div class="content-btn-container" style="display: none;" id="secondIdentityContent">
+        <div class="form-varify-content-section">
+            <header>
+                <h2><span>SMR</span>BOT</h2>
+            </header>
+
+            <div class="form-varify-content">
+                <h1>varify your identity</h1>
+                <div class="info-card">
+                    <div class="icon-section">
+                        <span class="material-icons">error</span>
+                    </div>
+                    <div class="info-body">
+                        <p><i>Verify your identity by entering your password for your SMR BoT Account below</i></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="varify-form">
+                <form action="/admin/login/google2" method="POST" autocomplete="off">
+                    <div class="main-input">
+                        <label for="username">
+                            Email Address
+                            <p>This is your Google email address we've matched to your SMR BoT Account</p>
+                            <input type="email" name="username" id="username" value={{email}} readonly />
+                        </label>
+                        <label for="password">
+                            Password
+                            <br>
+                            <input type="password" name="password" id="password" placeholder="Enter your password">
+                            <div>
+                                <a onclick="showpass(this, event)">
+                                    <sapn class="material-icons">visibility</sapn>
+                                </a>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="submit-identity-form">
+                        <input type="submit" id="submit-idrntity-form" value="Confirm">
+                        <a href="/admin/login" class="button-cancel">Cancel</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script>
+    const firstIdentityContent = document.getElementById('firstIdentityContent');
+    const secondIdentityContent = document.getElementById('secondIdentityContent');
+    const buttonVarify = document.querySelector('.button-varify');
+
+    // secondIdentityContent.style.display = 'none';
+
+    buttonVarify.addEventListener('click', (e) => {
+        firstIdentityContent.style.display = 'none';
+        secondIdentityContent.style.display = 'unset';
+    });
+
+    const passwordIn = document.querySelector('#password');
+    function showpass(self, event) {
+        event.preventDefault();
+        passwordIn.type = passwordIn.type === "password" ? 'text' : 'password';
+    }
+</script>
