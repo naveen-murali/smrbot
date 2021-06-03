@@ -6,7 +6,7 @@ import re
 # import json
 
 #! importing all localfiles-----------------------------------------------------------------
-from . import connection, models, otp, sms, flash#, interface
+from . import connection, models, otp, sms, flash, interface
 
 user = { "id": None }
 with open("./smrView/userId.txt", "r") as file:
@@ -15,7 +15,7 @@ with open("./smrView/userId.txt", "r") as file:
 #! Global functions calls-------------------------------------------------------------------
 connection.connect()
 sms.connect()
-# interface.setup()
+interface.setup()
 
 #! Create your views here.----------------------------------------------------------------------------------------------------------------
 # @rout     GET /tempRead/
@@ -24,7 +24,7 @@ def display(req):
     if not user['id']:
         errors = flash.flash("error")
         return render(req, 'getUserId.html', { "errors": errors })
-    # interface.deactive_sani()
+    interface.deactive_sani()
     return render(req, 'smrbot.html')
 
 
@@ -38,7 +38,7 @@ def confirmAcc(req):
         return redirect("/")
     
     try:
-        res = connection.get().users.find_one({ '_id': ObjectId(id) }, {"_id": 1, "email": 1, "googleImg": 1})
+        res = connection.get().users.find_one({ '_id': ObjectId(id) }, { "_id": 1, "email": 1, "googleImg": 1 })
         return render(req, 'userConfirm.html', { "email": res["email"], "img": res["googleImg"], "id": id })
     except:
         flash.flash("error", "Can not find the user. Please try again.")
@@ -98,11 +98,11 @@ def register(req):
 # @desc     To varify the temparature and allow the access.
 def tempRead(req):
     print("------------[ajax connected]------------")
-    # temp = float(interface.action())
-    temp = 33
+    temp = float(interface.action())
+    # temp = 33
 
     if temp and 32 < temp and temp < 35:
-        # interface.active_sani()
+        interface.active_sani()
         resData = {
             "entryAllowed": True,
             "speechContent": "Please register your information."
